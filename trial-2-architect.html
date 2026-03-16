@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trial II — The Architect | Invicta-One</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/architect.css">
+</head>
+<body>
+
+  <!-- ── Navigation ──────────────────────────────────────── -->
+  <nav class="pixel-nav">
+    <a class="nav-logo" href="index.html">
+      <span class="logo-icon">🚀</span>
+      <span>INVICTA-ONE</span>
+    </a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">[ MENU ]</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="nav-link" data-page="index">[ PASSPORT ]</a></li>
+      <li><a href="trial-1-kessel-run.html" class="nav-link" data-page="kessel">[ T1: KESSEL RUN ]</a></li>
+      <li><a href="trial-2-architect.html" class="nav-link" data-page="architect">[ T2: ARCHITECT ]</a></li>
+      <li><a href="trial-3-holocron.html" class="nav-link" data-page="holocron">[ T3: HOLOCRON ]</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero: Porto Skyline ─────────────────────────────── -->
+  <div class="hero-architect">
+    <!-- Porto pixel skyline SVG -->
+    <svg id="porto-skyline" viewBox="0 0 1200 260" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+      <!-- Sky gradient -->
+      <defs>
+        <linearGradient id="sky-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1c1030"/>
+          <stop offset="100%" stop-color="#3d1808"/>
+        </linearGradient>
+        <linearGradient id="river-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1a2840"/>
+          <stop offset="100%" stop-color="#0a1020"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Sky background -->
+      <rect width="1200" height="200" fill="url(#sky-grad)"/>
+
+      <!-- Moon -->
+      <circle cx="1050" cy="40" r="18" fill="#f5e8c0" opacity="0.9"/>
+      <circle cx="1058" cy="36" r="14" fill="#3d1808" opacity="0.6"/>
+
+      <!-- Stars (small dots) -->
+      <circle cx="80"  cy="20" r="1" fill="#fff" opacity="0.8"/>
+      <circle cx="200" cy="40" r="1" fill="#fff" opacity="0.6"/>
+      <circle cx="350" cy="15" r="1.5" fill="#fff" opacity="0.7"/>
+      <circle cx="500" cy="35" r="1" fill="#fff" opacity="0.5"/>
+      <circle cx="700" cy="25" r="1" fill="#fff" opacity="0.8"/>
+      <circle cx="850" cy="10" r="1.5" fill="#fff" opacity="0.6"/>
+      <circle cx="950" cy="50" r="1" fill="#fff" opacity="0.7"/>
+      <circle cx="150" cy="55" r="1" fill="#ffee88" opacity="0.6"/>
+      <circle cx="620" cy="12" r="1" fill="#aaddff" opacity="0.7"/>
+
+      <!-- Background hill layer (dark) -->
+      <rect x="0" y="130" width="1200" height="70" fill="#180a04"/>
+
+      <!-- ── BUILDINGS — back layer (darker) ── -->
+      <!-- Block cluster left -->
+      <rect x="20"  y="100" width="30" height="100" fill="#3d1a0c"/>
+      <rect x="25"  y="95"  width="20" height="10"  fill="#4a2010"/>
+      <rect x="55"  y="110" width="25" height="90"  fill="#351508"/>
+      <rect x="85"  y="90"  width="35" height="110" fill="#3d1a0c"/>
+      <!-- Chimney -->
+      <rect x="92"  y="75"  width="6"  height="20"  fill="#2a1008"/>
+      <rect x="102" y="80"  width="5"  height="15"  fill="#2a1008"/>
+
+      <!-- Factory complex center-left -->
+      <rect x="130" y="95"  width="60" height="105" fill="#301508"/>
+      <rect x="145" y="80"  width="8"  height="20"  fill="#201008"/>
+      <rect x="162" y="75"  width="8"  height="25"  fill="#201008"/>
+      <rect x="178" y="82"  width="7"  height="18"  fill="#201008"/>
+      <!-- Smoke wisps from chimneys -->
+      <ellipse cx="149" cy="76" rx="4" ry="6" fill="rgba(120,100,80,0.3)"/>
+      <ellipse cx="166" cy="70" rx="3" ry="8" fill="rgba(120,100,80,0.2)"/>
+
+      <!-- Residential cluster center -->
+      <rect x="200" y="105" width="40" height="95"  fill="#4d2010"/>
+      <rect x="245" y="98"  width="35" height="102" fill="#3a1808"/>
+      <rect x="285" y="112" width="30" height="88"  fill="#4d2010"/>
+      <!-- Rooflines (peaked, pixel) -->
+      <polygon points="200,105 220,90 240,105" fill="#5c2814"/>
+      <polygon points="245,98  262,83 280,98"  fill="#4a1e0c"/>
+
+      <!-- Church/tower center -->
+      <rect x="320" y="70"  width="28" height="130" fill="#3a1808"/>
+      <rect x="327" y="55"  width="14" height="20"  fill="#301408"/>
+      <rect x="332" y="48"  width="4"  height="10"  fill="#eecc88" opacity="0.7"/>
+
+      <!-- Azulejo building (tiled facade) -->
+      <rect x="355" y="88"  width="55" height="112" fill="#2a6080"/>
+      <!-- Tile pattern (simplified) -->
+      <rect x="360" y="95"  width="8"  height="8"  fill="#1a4060" opacity="0.6"/>
+      <rect x="372" y="95"  width="8"  height="8"  fill="#1a4060" opacity="0.6"/>
+      <rect x="384" y="95"  width="8"  height="8"  fill="#1a4060" opacity="0.6"/>
+      <rect x="396" y="95"  width="8"  height="8"  fill="#1a4060" opacity="0.6"/>
+      <rect x="360" y="108" width="8"  height="8"  fill="#1a4060" opacity="0.6"/>
+      <rect x="372" y="108" width="8"  height="8"  fill="#1a4060" opacity="0.6"/>
+      <rect x="384" y="108" width="8"  height="8"  fill="#1a4060" opacity="0.6"/>
+      <rect x="396" y="108" width="8"  height="8"  fill="#1a4060" opacity="0.6"/>
+      <rect x="360" y="121" width="8"  height="8"  fill="#1a4060" opacity="0.6"/>
+      <rect x="372" y="121" width="8"  height="8"  fill="#1a4060" opacity="0.6"/>
+      <rect x="384" y="121" width="8"  height="8"  fill="#1a4060" opacity="0.6"/>
+      <rect x="396" y="121" width="8"  height="8"  fill="#1a4060" opacity="0.6"/>
+
+      <!-- Terracotta rooftops cluster right-center -->
+      <rect x="420" y="100" width="45" height="100" fill="#5c2814"/>
+      <polygon points="420,100 442,82 465,100" fill="#7a3a1c"/>
+      <rect x="470" y="90"  width="40" height="110" fill="#4d2010"/>
+      <polygon points="470,90  490,72 510,90"  fill="#6a3018"/>
+      <rect x="515" y="108" width="50" height="92"  fill="#5c2814"/>
+      <!-- Solar panels on this building! -->
+      <rect x="520" y="100" width="18" height="10" fill="#2244aa" opacity="0.9"/>
+      <rect x="542" y="100" width="18" height="10" fill="#2244aa" opacity="0.9"/>
+      <!-- Panel sheen animation -->
+      <rect x="520" y="100" width="18" height="10" fill="rgba(100,180,255,0.0)">
+        <animate attributeName="fill-opacity" values="0;0.4;0" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="542" y="100" width="18" height="10" fill="rgba(100,180,255,0.0)">
+        <animate attributeName="fill-opacity" values="0;0.4;0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+      </rect>
+
+      <!-- NEW Green Tech Hub — Campanhã (center-right, distinctive modern shape) -->
+      <!-- Main building block -->
+      <rect x="570" y="82"  width="80" height="118" fill="#284830"/>
+      <!-- Green roof elements -->
+      <rect x="575" y="74"  width="70" height="12"  fill="#3a6040"/>
+      <!-- Solar array on hub -->
+      <rect x="578" y="68"  width="12" height="8"   fill="#1a3888"/>
+      <rect x="594" y="68"  width="12" height="8"   fill="#1a3888"/>
+      <rect x="610" y="68"  width="12" height="8"   fill="#1a3888"/>
+      <rect x="626" y="68"  width="12" height="8"   fill="#1a3888"/>
+      <!-- Sheen on hub panels -->
+      <rect x="578" y="68"  width="64" height="8" fill="rgba(100,200,255,0)">
+        <animate attributeName="fill-opacity" values="0;0.5;0" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <!-- Windows -->
+      <rect x="578" y="88"  width="12" height="10" fill="#88ccaa" opacity="0.7"/>
+      <rect x="594" y="88"  width="12" height="10" fill="#88ccaa" opacity="0.7"/>
+      <rect x="610" y="88"  width="12" height="10" fill="#88ccaa" opacity="0.7"/>
+      <rect x="626" y="88"  width="12" height="10" fill="#88ccaa" opacity="0.7"/>
+      <rect x="578" y="104" width="12" height="10" fill="#88ccaa" opacity="0.5"/>
+      <rect x="594" y="104" width="12" height="10" fill="#88ccaa" opacity="0.5"/>
+      <!-- Courtyard/garden area -->
+      <rect x="573" y="195" width="80" height="8"  fill="#2a5030"/>
+      <!-- Trees (pixel) -->
+      <rect x="575" y="180" width="8"  height="16" fill="#1e3820"/>
+      <rect x="573" y="172" width="12" height="12" fill="#3a6030" rx="2"/>
+      <rect x="598" y="182" width="8"  height="14" fill="#1e3820"/>
+      <rect x="596" y="174" width="12" height="12" fill="#3a6030" rx="2"/>
+      <rect x="623" y="178" width="8"  height="18" fill="#1e3820"/>
+      <rect x="621" y="169" width="12" height="13" fill="#3a6030" rx="2"/>
+      <!-- Hub label star marker -->
+      <text x="610" y="64" font-size="8" fill="#ffcc44" text-anchor="middle" font-family="monospace">★</text>
+
+      <!-- More buildings right side -->
+      <rect x="660" y="95"  width="35" height="105" fill="#4d2010"/>
+      <polygon points="660,95 677,78 695,95" fill="#6a3018"/>
+      <rect x="700" y="88"  width="50" height="112" fill="#3a1808"/>
+      <rect x="705" y="78"  width="8"  height="14"  fill="#2a1008"/>
+      <rect x="718" y="75"  width="8"  height="17"  fill="#2a1008"/>
+
+      <!-- Right cluster -->
+      <rect x="760" y="100" width="45" height="100" fill="#5c2814"/>
+      <polygon points="760,100 782,82 805,100" fill="#7a3a1c"/>
+      <rect x="810" y="92"  width="40" height="108" fill="#4d2010"/>
+      <rect x="855" y="105" width="60" height="95"  fill="#3a1808"/>
+      <rect x="920" y="98"  width="35" height="102" fill="#5c2814"/>
+      <rect x="960" y="110" width="30" height="90"  fill="#4d2010"/>
+      <rect x="995" y="88"  width="50" height="112" fill="#3a1808"/>
+      <rect x="998" y="76"  width="7"  height="15"  fill="#201008"/>
+      <rect x="1010" y="72" width="7"  height="19"  fill="#201008"/>
+      <!-- Far right towers -->
+      <rect x="1050" y="85" width="35" height="115" fill="#4d2010"/>
+      <rect x="1057" y="68" width="20" height="20"  fill="#3a1808"/>
+      <rect x="1090" y="95" width="50" height="105" fill="#3a1808"/>
+      <rect x="1145" y="105" width="55" height="95" fill="#4d2010"/>
+
+      <!-- ── RAIL TERMINAL (Campanhã) ── -->
+      <rect x="410" y="155" width="120" height="45" fill="#201808"/>
+      <rect x="415" y="148" width="110" height="10" fill="#2a2010"/>
+      <!-- Arch windows -->
+      <rect x="420" y="160" width="12" height="20" fill="#1a1408" rx="6"/>
+      <rect x="438" y="160" width="12" height="20" fill="#1a1408" rx="6"/>
+      <rect x="456" y="160" width="12" height="20" fill="#1a1408" rx="6"/>
+      <rect x="474" y="160" width="12" height="20" fill="#1a1408" rx="6"/>
+      <rect x="492" y="160" width="12" height="20" fill="#1a1408" rx="6"/>
+
+      <!-- Rail tracks -->
+      <line x1="0"    y1="205" x2="1200" y2="205" stroke="#2a2010" stroke-width="2"/>
+      <line x1="0"    y1="210" x2="1200" y2="210" stroke="#2a2010" stroke-width="2"/>
+      <!-- Track sleepers -->
+      <rect x="0"   y="204" width="8" height="8" fill="#201808"/>
+      <rect x="20"  y="204" width="8" height="8" fill="#201808"/>
+      <rect x="40"  y="204" width="8" height="8" fill="#201808"/>
+      <rect x="60"  y="204" width="8" height="8" fill="#201808"/>
+      <rect x="80"  y="204" width="8" height="8" fill="#201808"/>
+      <rect x="100" y="204" width="8" height="8" fill="#201808"/>
+
+      <!-- ── DOURO RIVER ── -->
+      <rect x="0" y="215" width="1200" height="45" fill="url(#river-grad)"/>
+      <!-- River shimmer -->
+      <line x1="0"    y1="222" x2="1200" y2="222" stroke="rgba(100,180,255,0.08)" stroke-width="1"/>
+      <line x1="0"    y1="230" x2="1200" y2="230" stroke="rgba(100,180,255,0.06)" stroke-width="1"/>
+      <line x1="0"    y1="238" x2="1200" y2="238" stroke="rgba(100,180,255,0.05)" stroke-width="1"/>
+      <!-- Animated ripple -->
+      <rect x="200" y="220" width="80" height="2" fill="rgba(150,220,255,0.15)" rx="1">
+        <animate attributeName="x" values="200;400;200" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.15;0.4;0.15" dur="6s" repeatCount="indefinite"/>
+      </rect>
+
+      <!-- ── Ground ── -->
+      <rect x="0" y="260" width="1200" height="20" fill="#100804"/>
+
+      <!-- Hub star marker label -->
+      <text x="610" y="258" font-size="7" fill="rgba(92,184,92,0.6)" text-anchor="middle" font-family="monospace">CAMPANHA HUB</text>
+    </svg>
+
+    <div class="hero-content">
+      <p class="hero-meta" style="margin-bottom: var(--s2);">◀ INVICTA-ONE &nbsp;/&nbsp; PHASE 1 &nbsp;/&nbsp; TRIAL II ▶</p>
+      <h1 class="hero-title" style="color: #f0a070;">THE ARCHITECT</h1>
+      <p class="hero-subtitle" style="color: #e8724a;">PRECISION & NEGATIVE PROMPTING</p>
+      <p class="hero-meta" style="margin-top: var(--s3);">TECHNIQUE: PERSONA &nbsp;•&nbsp; CONSTRAINT ENFORCEMENT &nbsp;•&nbsp; ANTI-CLICHÉ PROTOCOL</p>
+    </div>
+  </div>
+
+  <main class="page-wrapper">
+
+    <!-- ── Mission Brief ──────────────────────────────────── -->
+    <div class="content-section" data-label="MISSION BRIEF" data-animate>
+      <div class="mission-meta">
+        <div class="mission-meta-item">
+          <span class="label">TRIAL</span>
+          <span class="value">02 — THE ARCHITECT</span>
+        </div>
+        <div class="mission-meta-item">
+          <span class="label">TECHNIQUE</span>
+          <span class="value" style="color: #e8724a;">PRECISION + NEGATIVE PROMPTING</span>
+        </div>
+        <div class="mission-meta-item">
+          <span class="label">STATUS</span>
+          <span class="value" style="color: var(--color-success);">✓ COMPLETE — ALL CONSTRAINTS MET</span>
+        </div>
+      </div>
+      <div style="margin-top: var(--s3);">
+        <div class="label" style="margin-bottom: var(--s1);">COMPLETION</div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="--progress: 100%;"></div>
+        </div>
+      </div>
+      <p style="font-size: 0.7rem; color: var(--color-text); margin-top: var(--s3); line-height: 2.2;">
+        Mission: Draft a <strong style="color: var(--color-accent);">300-word proposal</strong> for the
+        <strong style="color: var(--color-accent);">Campanhã Green Technology Hub</strong> in Porto — adopting the persona
+        of a <strong style="color: var(--color-accent);">Senior Urban Planner</strong> and strictly avoiding 5 banned
+        buzzwords while delivering concrete metrics and a compelling vision.
+      </p>
+    </div>
+
+    <!-- ── Constraints + Stats ────────────────────────────── -->
+    <h2 class="section-title" data-animate>MISSION CONSTRAINTS & RESULTS</h2>
+
+    <div class="two-col" data-animate>
+
+      <!-- Constraints panel -->
+      <div class="constraints-panel">
+        <div class="panel-title">⚙ ACTIVE CONSTRAINTS</div>
+
+        <div style="margin-bottom: var(--s3);">
+          <div class="label" style="margin-bottom: var(--s1);">PERSONA ASSIGNED</div>
+          <span class="persona-tag">SENIOR URBAN PLANNER</span>
+        </div>
+
+        <div style="margin-bottom: var(--s3);">
+          <div class="label" style="margin-bottom: var(--s1);">WORD LIMIT</div>
+          <div style="font-size: 0.9rem; color: var(--color-accent);">300 words
+            <span style="font-size: 0.6rem; color: var(--color-success);"> (submitted: ~295)</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="label" style="margin-bottom: var(--s2);">BANNED WORDS — 5 FORBIDDEN</div>
+          <div class="banned-words-container" id="banned-container">
+            <div class="banned-word" data-word="smart"><span class="ban-x">✕</span> smart</div>
+            <div class="banned-word" data-word="sustainable"><span class="ban-x">✕</span> sustainable</div>
+            <div class="banned-word" data-word="innovative"><span class="ban-x">✕</span> innovative</div>
+            <div class="banned-word" data-word="synergy"><span class="ban-x">✕</span> synergy</div>
+            <div class="banned-word" data-word="future"><span class="ban-x">✕</span> future</div>
+          </div>
+          <div class="banned-protocol-label">ANTI-CLICHÉ PROTOCOL ACTIVE</div>
+        </div>
+      </div>
+
+      <!-- Stats panel -->
+      <div class="stats-panel">
+        <div class="panel-title">📊 PROPOSAL METRICS</div>
+        <div class="stats-grid">
+          <div class="stat-card" style="border-color: var(--color-green);">
+            <span class="stat-number" data-counter="340" data-suffix="">340</span>
+            <span class="stat-label" style="color: var(--color-green);">DIRECT JOBS<br>WITHIN 36 MONTHS</span>
+          </div>
+          <div class="stat-card" style="border-color: var(--color-green);">
+            <span class="stat-number" data-counter="120" data-suffix="">120</span>
+            <span class="stat-label" style="color: var(--color-green);">INDIRECT JOBS<br>CREATED</span>
+          </div>
+          <div class="stat-card" style="border-color: var(--color-accent);">
+            <span class="stat-number" data-counter="35" data-suffix="%">35%</span>
+            <span class="stat-label">SOLAR HEAT<br>GAIN REDUCTION</span>
+          </div>
+          <div class="stat-card" style="border-color: var(--color-accent);">
+            <span class="stat-number" data-counter="60" data-suffix="%">60%</span>
+            <span class="stat-label">PV ENERGY FOR<br>COMMON AREAS</span>
+          </div>
+          <div class="stat-card" style="border-color: #88ccff;">
+            <span class="stat-number" data-counter="40" data-suffix="%">40%</span>
+            <span class="stat-label" style="color: #88ccff;">POTABLE WATER<br>SAVINGS</span>
+          </div>
+          <div class="stat-card" style="border-color: #88ccff;">
+            <span class="stat-number" style="font-size: 1rem;" data-counter="2.4" data-suffix=" ha">2.4</span>
+            <span class="stat-label" style="color: #88ccff;">BROWNFIELD SITE<br>AREA (HECTARES)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Banned Words Verification ──────────────────────── -->
+    <h2 class="section-title" data-animate>BANNED WORDS PROTOCOL</h2>
+
+    <div class="content-section" data-label="CONSTRAINT VERIFICATION" data-animate>
+      <p style="font-size: 0.7rem; color: var(--color-text); line-height: 2.2; margin-bottom: var(--s3);">
+        All 5 forbidden words were <strong style="color: var(--color-success);">completely absent</strong> from the final proposal.
+        The AI was instructed to express the same concepts using concrete, specific language instead of buzzwords.
+      </p>
+
+      <div class="banned-words-container banned-words-container" id="banned-container-2">
+        <div class="banned-word struck" style="animation: none;"><span class="ban-x" style="color: var(--color-danger);">✕</span> smart → <span style="color: var(--color-success); text-decoration: none;">"precision-controlled"</span></div>
+        <div class="banned-word struck" style="animation: none;"><span class="ban-x" style="color: var(--color-danger);">✕</span> sustainable → <span style="color: var(--color-success); text-decoration: none;">"resource-efficient"</span></div>
+        <div class="banned-word struck" style="animation: none;"><span class="ban-x" style="color: var(--color-danger);">✕</span> innovative → <span style="color: var(--color-success); text-decoration: none;">"first-of-kind / proven"</span></div>
+        <div class="banned-word struck" style="animation: none;"><span class="ban-x" style="color: var(--color-danger);">✕</span> synergy → <span style="color: var(--color-success); text-decoration: none;">"shared infrastructure"</span></div>
+        <div class="banned-word struck" style="animation: none;"><span class="ban-x" style="color: var(--color-danger);">✕</span> future → <span style="color: var(--color-success); text-decoration: none;">"within 36 months"</span></div>
+      </div>
+    </div>
+
+    <!-- ── The Proposal ────────────────────────────────────── -->
+    <h2 class="section-title" data-animate>THE PROPOSAL</h2>
+
+    <div class="proposal-document" data-animate>
+      <div class="proposal-header">
+        <div class="proposal-title">CAMPANHÃ GREEN TECHNOLOGY HUB<br>URBAN REGENERATION PROPOSAL</div>
+        <div class="proposal-meta">
+          SUBMITTED BY: SENIOR URBAN PLANNER &nbsp;|&nbsp; LOCATION: CAMPANHÃ, PORTO &nbsp;|&nbsp; SITE: 2.4 HA BROWNFIELD &nbsp;|&nbsp; WORD COUNT: ~295
+        </div>
+      </div>
+
+      <div class="proposal-body">
+        <p>
+          The 2.4-hectare brownfield site adjacent to the Campanhã rail terminal presents a rare
+          opportunity to transform post-industrial land into a productive mixed-use district.
+          The proposed Green Technology Hub would repurpose an under-used corridor connecting
+          the eastern residential quarters to the city centre, addressing documented gaps in
+          local employment, green infrastructure, and technical workspace capacity.
+        </p>
+        <p>
+          The architectural programme centres on a cluster of low-rise, high-performance laboratory
+          and office buildings arranged around a <span class="proposal-stat-inline">0.6-hectare</span>
+          publicly accessible courtyard. Building envelopes will incorporate triple-glazed, high-albedo
+          facades combined with deep overhangs calibrated to achieve a
+          <span class="proposal-stat-inline">35%</span> reduction in solar heat gain relative to current
+          stock in the area — eliminating the need for mechanical cooling during seven months of the year.
+          Photovoltaic arrays across all roof surfaces and south-facing cladding panels are sized to
+          supply <span class="proposal-stat-inline">60%</span> of common-area electricity demand from
+          day one of operation.
+        </p>
+        <p>
+          A closed-loop greywater system and permeable paving throughout will achieve a
+          <span class="proposal-stat-inline">40%</span> reduction in potable water consumption
+          compared with standard commercial construction. The courtyard's biodiverse planting
+          plan — selected in consultation with the Porto Botanic Garden — provides measurable
+          cooling, stormwater attenuation, and recreational amenity without ornamental excess.
+        </p>
+        <p>
+          Economic projections, independently verified, indicate <span class="proposal-stat-inline">340</span>
+          direct positions within 36 months of opening — spanning laboratory technicians, logistics,
+          facilities management, and knowledge-economy roles — alongside
+          <span class="proposal-stat-inline">120</span> indirect jobs in supply-chain and service sectors.
+          Three anchor tenants from the life sciences and clean-energy instrumentation sectors
+          have submitted letters of intent pending planning approval.
+        </p>
+        <p>
+          This proposal asks the Council to designate the site for mixed-use technology and public-realm
+          use, issue an Expressions of Interest notice to anchor tenants, and commission a full
+          Environmental Impact Assessment within 60 days.
+        </p>
+      </div>
+
+      <div class="constraint-strip">
+        <div class="constraint-item">
+          <span class="c-icon">✓</span>
+          <span class="c-label">WORD COUNT:</span>
+          <span class="c-value">~295 / 300</span>
+        </div>
+        <div class="constraint-item">
+          <span class="c-icon">✓</span>
+          <span class="c-label">PERSONA:</span>
+          <span class="c-value">SENIOR URBAN PLANNER</span>
+        </div>
+        <div class="constraint-item">
+          <span class="c-icon">✓</span>
+          <span class="c-label">BANNED WORDS:</span>
+          <span class="c-value">0 / 5 FOUND</span>
+        </div>
+        <div class="constraint-item">
+          <span class="c-icon">✓</span>
+          <span class="c-label">METRICS:</span>
+          <span class="c-value">ALL STATS CITED</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Artifact: Anti-Cliché Brand Filter ─────────────── -->
+    <h2 class="section-title" data-animate>◆ GO FURTHER — ARTIFACT</h2>
+
+    <div class="content-section" data-label="ANTI-CLICHÉ BRAND FILTER" data-animate>
+      <div class="artifact-label" style="--color-accent: #f0a070;">ANTI-CLICHÉ BRAND FILTER — MODULAR SYSTEM PROMPT</div>
+      <p style="font-size: 0.65rem; color: var(--color-dim); line-height: 2; margin-bottom: var(--s3);">
+        A permanent, expandable system instruction that strips buzzwords and forces concrete substitutions.
+        Designed for team-wide use across any content or proposal writing task.
+      </p>
+
+      <div class="code-block-header">
+        <span>anti-cliche-brand-filter.md</span>
+        <button class="copy-btn" onclick="copyCode('artifact-2')">[ COPY ]</button>
+      </div>
+      <pre class="code-block" id="artifact-2">## ANTI-CLICHÉ BRAND FILTER
+## Version 1.0 — Invicta-One Phase 1, Trial 2
+
+### PURPOSE
+Prevent the use of overused corporate buzzwords. Force the AI
+to express concepts with concrete, specific, measurable language.
+
+### BANNED WORD LIST (expandable)
+The following words are FORBIDDEN in all output.
+When you encounter a concept that would normally use these words,
+replace it with specific, tangible language:
+
+| Banned Word  | Replace With                                          |
+|--------------|-------------------------------------------------------|
+| smart        | describe the specific mechanism (e.g., "sensor-based", "automated") |
+| sustainable  | cite the specific metric (e.g., "60% lower energy use") |
+| innovative   | describe what makes it different (e.g., "first municipal deployment") |
+| synergy      | describe the shared mechanism (e.g., "shared heat exchange loop") |
+| future       | use a specific timeframe (e.g., "within 18 months")   |
+| leverage     | use (e.g., "use", "apply", "deploy")                  |
+| ecosystem    | describe the specific network (e.g., "supply chain of 12 vendors") |
+| paradigm     | describe the shift concretely                         |
+| disruptive   | cite the specific displacement or improvement         |
+| scalable     | cite the growth capacity in numbers                   |
+
+### ENFORCEMENT RULES
+1. SELF-AUDIT: Before finalising any output, scan for banned words.
+   If found, rewrite the sentence using the replacement guidance above.
+2. SPECIFICITY MANDATE: Every claim must be backed by a number, name,
+   timeframe, or mechanism. No vague assertions allowed.
+3. PERSONA FIDELITY: When a persona is assigned (e.g., "Senior Urban
+   Planner"), all language, tone, and assumptions must match that
+   professional's vocabulary and concerns — not a marketing writer's.
+
+### HOW TO USE
+Add this block to the system prompt of any content-generation,
+proposal-writing, or communications task. Extend the banned word
+list as needed for your brand or domain.</pre>
+    </div>
+
+    <!-- ── Back / Forward nav ──────────────────────────────── -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--s5); flex-wrap: wrap; gap: var(--s2);" data-animate>
+      <a href="trial-1-kessel-run.html" class="pixel-btn" style="background: transparent; color: var(--color-accent); border-color: var(--color-accent);">← THE KESSEL RUN</a>
+      <a href="trial-3-holocron.html" class="pixel-btn" style="background: var(--color-accent); color: #000;">NEXT: THE HOLOCRON →</a>
+    </div>
+
+  </main>
+
+  <footer class="pixel-footer">
+    <p>TRIAL II — THE ARCHITECT &nbsp;•&nbsp; INVICTA-ONE 2026</p>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+    // Trigger banned word strike animation when section enters view
+    var bannedContainer = document.getElementById('banned-container');
+    if (bannedContainer) {
+      var bObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var words = bannedContainer.querySelectorAll('.banned-word');
+            words.forEach(function(word, idx) {
+              setTimeout(function() { word.classList.add('struck'); }, idx * 350);
+            });
+            bObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      bObserver.observe(bannedContainer);
+    }
+  </script>
+</body>
+</html>
