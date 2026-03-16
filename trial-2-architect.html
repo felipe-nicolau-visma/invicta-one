@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/architect.css">
+  <link rel="stylesheet" href="css/try-it.css">
 </head>
 <body>
 
@@ -479,6 +480,17 @@ proposal-writing, or communications task. Extend the banned word
 list as needed for your brand or domain.</pre>
     </div>
 
+    <!-- ── Try It ──────────────────────────────────────────── -->
+    <div class="try-it-banner" data-animate>
+      <div class="try-it-banner-text">
+        <strong>[ ⚡ LIVE TEST ]</strong> Run the Anti-Cliché Brand Filter against the real Claude API directly in your browser.
+        Write a brief and see Claude rewrite it with zero buzzwords.
+      </div>
+      <button class="try-it-btn" onclick="TryIt.open(TRIAL2_CONFIG)" style="--try-color: #f0a070; border-color: #f0a070; color: #f0a070;">
+        <span class="claude-dot" style="background: #f0a070; box-shadow: 0 0 6px #f0a070;"></span> TRY IT ON CLAUDE →
+      </button>
+    </div>
+
     <!-- ── Back / Forward nav ──────────────────────────────── -->
     <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--s5); flex-wrap: wrap; gap: var(--s2);" data-animate>
       <a href="trial-1-kessel-run.html" class="pixel-btn" style="background: transparent; color: var(--color-accent); border-color: var(--color-accent);">← THE KESSEL RUN</a>
@@ -493,6 +505,7 @@ list as needed for your brand or domain.</pre>
 
   <script src="js/nav.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/try-it.js"></script>
   <script>
     // Trigger banned word strike animation when section enters view
     var bannedContainer = document.getElementById('banned-container');
@@ -510,6 +523,15 @@ list as needed for your brand or domain.</pre>
       }, { threshold: 0.5 });
       bObserver.observe(bannedContainer);
     }
+
+    var TRIAL2_CONFIG = {
+      name: 'THE ARCHITECT',
+      color: '#f0a070',
+      systemPrompt: document.getElementById('artifact-2').textContent,
+      inputLabel: 'WRITE A BRIEF OR PARAGRAPH TO FILTER',
+      inputPlaceholder: 'e.g. We will leverage our sustainable, innovative ecosystem to drive synergy...',
+      sampleInput: 'We will leverage our smart, sustainable solutions to create synergy across the ecosystem and drive innovative, future-proof paradigms.'
+    };
   </script>
 </body>
 </html>

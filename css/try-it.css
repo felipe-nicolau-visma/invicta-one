@@ -1,0 +1,428 @@
+/* ============================================================
+   INVICTA-ONE — TRY-IT.CSS
+   Claude API live test modal — pixel art style
+   ============================================================ */
+
+/* ── Trigger button ─────────────────────────────────────────── */
+.try-it-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  padding: var(--s2) var(--s3);
+  background: #cc5500;
+  color: #fff8f0;
+  border: 2px solid #ff8800;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.5), 0 0 20px rgba(255,136,0,0.3);
+  transition: box-shadow 0.1s, transform 0.1s, background 0.1s;
+  text-decoration: none;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.try-it-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 60%);
+}
+
+.try-it-btn:hover {
+  background: #e06000;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.5), 0 0 30px rgba(255,136,0,0.5);
+  transform: translate(2px, 2px);
+}
+
+.try-it-btn:active {
+  box-shadow: 0 0 0 rgba(0,0,0,0.5);
+  transform: translate(4px, 4px);
+}
+
+.try-it-btn .claude-dot {
+  width: 10px;
+  height: 10px;
+  background: #ff8800;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ff8800;
+  animation: claude-pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes claude-pulse {
+  0%, 100% { box-shadow: 0 0 4px #ff8800; }
+  50%       { box-shadow: 0 0 14px #ffaa44, 0 0 28px rgba(255,136,0,0.4); }
+}
+
+/* ── Modal overlay ──────────────────────────────────────────── */
+.try-it-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s3);
+  backdrop-filter: blur(4px);
+}
+
+.try-it-overlay.open {
+  display: flex;
+}
+
+/* ── Modal panel ────────────────────────────────────────────── */
+.try-it-modal {
+  background: #0a0a14;
+  border: 2px solid var(--try-color, #ff8800);
+  box-shadow:
+    0 0 40px rgba(255,136,0,0.2),
+    0 0 80px rgba(0,0,0,0.8),
+    inset 0 0 40px rgba(0,0,0,0.5);
+  width: 100%;
+  max-width: 760px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ── Modal header ───────────────────────────────────────────── */
+.try-it-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--s2) var(--s3);
+  background: rgba(255,136,0,0.08);
+  border-bottom: 2px solid var(--try-color, #ff8800);
+  flex-shrink: 0;
+}
+
+.try-it-header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+}
+
+.claude-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.6rem;
+  padding: 3px 8px;
+  background: #cc5500;
+  border: 1px solid #ff8800;
+  color: #fff8f0;
+  letter-spacing: 1px;
+}
+
+.claude-logo-badge::before {
+  content: '◆';
+  color: #ff8800;
+}
+
+.try-it-title {
+  font-size: 0.75rem;
+  color: var(--try-color, #ff8800);
+  letter-spacing: 2px;
+}
+
+.try-it-close {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  background: transparent;
+  color: #888;
+  border: 1px solid #444;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: color 0.1s, border-color 0.1s;
+}
+
+.try-it-close:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+/* ── Modal body ─────────────────────────────────────────────── */
+.try-it-body {
+  padding: var(--s3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  flex: 1;
+}
+
+/* ── API Key section ────────────────────────────────────────── */
+.apikey-section {
+  background: rgba(255,136,0,0.05);
+  border: 1px solid rgba(255,136,0,0.3);
+  padding: var(--s2) var(--s3);
+}
+
+.apikey-section.has-key {
+  border-color: rgba(68,204,68,0.3);
+  background: rgba(68,204,68,0.04);
+}
+
+.apikey-row {
+  display: flex;
+  gap: var(--s2);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.apikey-label {
+  font-size: 0.6rem;
+  color: #ff8800;
+  white-space: nowrap;
+}
+
+.apikey-label.set { color: #44cc44; }
+
+.apikey-input {
+  flex: 1;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  background: #050510;
+  border: 1px solid #444;
+  color: #88ccff;
+  padding: 6px var(--s2);
+  min-width: 180px;
+  outline: none;
+}
+
+.apikey-input:focus {
+  border-color: #ff8800;
+}
+
+.apikey-save-btn {
+  font-family: var(--font-pixel);
+  font-size: 0.55rem;
+  background: #cc5500;
+  color: #fff;
+  border: 1px solid #ff8800;
+  padding: 6px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.1s;
+}
+
+.apikey-save-btn:hover { background: #e06000; }
+
+.apikey-status {
+  font-size: 0.55rem;
+  color: #44cc44;
+  white-space: nowrap;
+}
+
+.apikey-hint {
+  font-size: 0.55rem;
+  color: #666;
+  margin-top: 4px;
+  line-height: 1.8;
+}
+
+/* ── System prompt toggle ───────────────────────────────────── */
+.system-prompt-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: var(--s1) 0;
+  border-bottom: 1px solid #222;
+}
+
+.system-prompt-toggle .spt-label {
+  font-size: 0.6rem;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+.system-prompt-toggle .spt-arrow {
+  font-size: 0.6rem;
+  color: #555;
+  transition: transform 0.2s;
+}
+
+.system-prompt-toggle.open .spt-arrow { transform: rotate(90deg); }
+
+.system-prompt-display {
+  display: none;
+  background: #050510;
+  border: 1px solid #222;
+  padding: var(--s2);
+  font-family: 'Courier New', monospace;
+  font-size: 0.65rem;
+  color: #44aa44;
+  white-space: pre-wrap;
+  max-height: 160px;
+  overflow-y: auto;
+  margin-top: 4px;
+  line-height: 1.6;
+}
+
+.system-prompt-display.open { display: block; }
+
+/* ── User input ─────────────────────────────────────────────── */
+.input-section label {
+  display: block;
+  font-size: 0.6rem;
+  color: #888;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.try-it-input {
+  width: 100%;
+  min-height: 100px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  background: #050510;
+  border: 1px solid #333;
+  color: #c0e0ff;
+  padding: var(--s2);
+  resize: vertical;
+  outline: none;
+  line-height: 1.7;
+  box-sizing: border-box;
+}
+
+.try-it-input:focus {
+  border-color: var(--try-color, #ff8800);
+}
+
+/* ── Send button ────────────────────────────────────────────── */
+.send-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  flex-wrap: wrap;
+}
+
+.send-claude-btn {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  background: #cc5500;
+  color: #fff8f0;
+  border: 2px solid #ff8800;
+  padding: var(--s2) var(--s3);
+  cursor: pointer;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+  transition: box-shadow 0.1s, transform 0.1s, background 0.1s;
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+}
+
+.send-claude-btn:hover:not(:disabled) {
+  background: #e06000;
+  box-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+  transform: translate(2px, 2px);
+}
+
+.send-claude-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.send-note {
+  font-size: 0.55rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* ── Response area ──────────────────────────────────────────── */
+.response-section {
+  display: none;
+  border: 1px solid var(--try-color, #ff8800);
+  background: #050510;
+}
+
+.response-section.visible { display: block; }
+
+.response-header {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: var(--s1) var(--s2);
+  background: rgba(255,136,0,0.06);
+  border-bottom: 1px solid #222;
+  font-size: 0.6rem;
+  color: #ff8800;
+}
+
+.response-header .claude-dot {
+  width: 8px;
+  height: 8px;
+  background: #ff8800;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #ff8800;
+}
+
+.response-body {
+  padding: var(--s3);
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: #d0e8d0;
+  white-space: pre-wrap;
+  line-height: 1.8;
+  max-height: 360px;
+  overflow-y: auto;
+  min-height: 60px;
+}
+
+/* ── Loading state ──────────────────────────────────────────── */
+.loading-dots {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.loading-dots span {
+  width: 6px;
+  height: 6px;
+  background: #ff8800;
+  display: inline-block;
+  animation: dot-bounce 1.2s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dot-bounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40%            { transform: scale(1.0); opacity: 1.0; }
+}
+
+/* ── Error state ─────────────────────────────────────────────── */
+.response-error {
+  color: #ff6666;
+  font-size: 0.7rem;
+  padding: var(--s2) var(--s3);
+  border: 1px solid #ff4444;
+  background: rgba(255,68,68,0.05);
+}
+
+/* ── Try It banner (above the button) ──────────────────────── */
+.try-it-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  padding: var(--s3);
+  background: rgba(204,85,0,0.06);
+  border: 2px solid rgba(255,136,0,0.3);
+  flex-wrap: wrap;
+}
+
+.try-it-banner-text {
+  flex: 1;
+  font-size: 0.65rem;
+  color: #ff8800;
+  line-height: 2;
+  min-width: 200px;
+}
+
+.try-it-banner-text strong { color: #ffaa44; }

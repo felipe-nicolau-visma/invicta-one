@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/kessel-run.css">
+  <link rel="stylesheet" href="css/try-it.css">
 </head>
 <body>
 
@@ -325,6 +326,17 @@ Input: "Love the new sidebar, but the search is painfully slow"
 Output: MIXED | UX | MEDIUM | Genuine praise for sidebar offset by a performance complaint.</pre>
     </div>
 
+    <!-- ── Try It ──────────────────────────────────────────── -->
+    <div class="try-it-banner" data-animate>
+      <div class="try-it-banner-text">
+        <strong>[ ⚡ LIVE TEST ]</strong> Run this classifier against the real Claude API directly in your browser.
+        Paste any customer feedback comment and see Claude classify it in real time.
+      </div>
+      <button class="try-it-btn" onclick="TryIt.open(TRIAL1_CONFIG)">
+        <span class="claude-dot"></span> TRY IT ON CLAUDE →
+      </button>
+    </div>
+
     <!-- ── Back / Forward nav ──────────────────────────────── -->
     <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--s5); flex-wrap: wrap; gap: var(--s2);" data-animate>
       <a href="index.html" class="pixel-btn" style="background: transparent; color: var(--color-accent); border-color: var(--color-accent);">← PASSPORT</a>
@@ -340,5 +352,16 @@ Output: MIXED | UX | MEDIUM | Genuine praise for sidebar offset by a performance
   <script src="js/nav.js"></script>
   <script src="js/stars.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/try-it.js"></script>
+  <script>
+    var TRIAL1_CONFIG = {
+      name: 'THE KESSEL RUN',
+      color: '#00cccc',
+      systemPrompt: document.getElementById('artifact-1').textContent,
+      inputLabel: 'PASTE A FEEDBACK COMMENT TO CLASSIFY',
+      inputPlaceholder: 'e.g. Oh great, another outage during peak hours...',
+      sampleInput: 'Oh great, another outage right before my client demo. So helpful!'
+    };
+  </script>
 </body>
 </html>

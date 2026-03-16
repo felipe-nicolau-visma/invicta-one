@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/holocron.css">
+  <link rel="stylesheet" href="css/try-it.css">
 </head>
 <body>
 
@@ -476,6 +477,17 @@ Return structured JSON for tool import:
 ```</pre>
     </div>
 
+    <!-- ── Try It ──────────────────────────────────────────── -->
+    <div class="try-it-banner" data-animate>
+      <div class="try-it-banner-text">
+        <strong>[ ⚡ LIVE TEST ]</strong> Run the Meeting-to-Action-Item Tool against the real Claude API directly in your browser.
+        Paste any meeting transcript or notes and see Claude extract structured action items with verification.
+      </div>
+      <button class="try-it-btn" onclick="TryIt.open(TRIAL3_CONFIG)" style="--try-color: #ffaa00; border-color: #ffaa00; color: #ffaa00;">
+        <span class="claude-dot" style="background: #ffaa00; box-shadow: 0 0 6px #ffaa00;"></span> TRY IT ON CLAUDE →
+      </button>
+    </div>
+
     <!-- ── Back / Forward nav ──────────────────────────────── -->
     <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--s5); flex-wrap: wrap; gap: var(--s2);" data-animate>
       <a href="trial-2-architect.html" class="pixel-btn" style="background: transparent; color: var(--color-accent); border-color: var(--color-accent);">← THE ARCHITECT</a>
@@ -492,6 +504,7 @@ Return structured JSON for tool import:
   <script src="js/nav.js"></script>
   <script src="js/stars.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/try-it.js"></script>
   <script>
     // Stagger action items on scroll
     var actionSection = document.getElementById('action-items-section');
@@ -509,6 +522,15 @@ Return structured JSON for tool import:
       }, { threshold: 0.1 });
       actionObserver.observe(actionSection);
     }
+
+    var TRIAL3_CONFIG = {
+      name: 'THE HOLOCRON',
+      color: '#ffaa00',
+      systemPrompt: document.getElementById('artifact-3').textContent,
+      inputLabel: 'PASTE MEETING TRANSCRIPT OR NOTES',
+      inputPlaceholder: 'e.g. We discussed the iOS crash affecting 2000 users. Pedro will fix it by Friday...',
+      sampleInput: 'Team sync — March 15. Discussed: iOS crash affecting 2000 users in production, Pedro will investigate and patch by Friday. Monthly revenue at risk €30K due to expired billing certs, Ana to renew by EOD tomorrow. 11 P1 bugs still open from last sprint, Marco to triage and assign by Wednesday. Meeting adjourned.'
+    };
   </script>
 </body>
 </html>
