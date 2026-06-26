@@ -149,11 +149,14 @@ body::after {
 
 /* Phase divider in nav (shared so Phase 1 pages style it too) */
 .nav-phase-sep {
-  align-self: center;
-  font-size: 0.55rem;
-  color: var(--color-dim);
-  padding: 0 var(--s1);
-  letter-spacing: 1px;
+  /* Full-width, zero-height break: splits the links into a Phase-1 row
+     (Passport + trials) and a Phase-2 row (skills) so they group cleanly
+     instead of leaving "// P2 //" orphaned at the end of a row. */
+  flex: 0 0 100%;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
   list-style: none;
 }
 @media (max-width: 768px) { .nav-phase-sep { display: none; } }
