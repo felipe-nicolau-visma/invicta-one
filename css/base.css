@@ -3,7 +3,7 @@
    Shared tokens, utilities, navigation, global animations
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
 
 /* ── Reset ─────────────────────────────────────────────────── */
 *, *::before, *::after {
@@ -13,22 +13,34 @@
 }
 
 html {
-  font-size: clamp(7px, 0.85vw, 10px);
+  /* ponytail: root drives every rem. Pixel font needs a real base, not 10px. */
+  font-size: clamp(15px, 0.4vw + 13px, 17px);
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Press Start 2P', monospace;
+  /* Body copy in a legible pixel font (VT323); Press Start 2P is display-only. */
+  font-family: var(--font-body);
   background-color: var(--color-bg);
   color: var(--color-text);
   min-height: 100vh;
-  line-height: 1.8;
+  font-size: 1.15rem;
+  line-height: 1.45;
   image-rendering: pixelated;
+}
+
+/* Press Start 2P stays for display + chrome only (it's unreadable as body copy) */
+h1, h2, h3, h4, h5, h6,
+.hero-title, .hero-subtitle, .hero-meta,
+.section-title, .stat-number, .label, .badge,
+.nav-logo {
+  font-family: var(--font-pixel);
 }
 
 /* ── Design Tokens (overridden per theme) ───────────────────── */
 :root {
   --font-pixel: 'Press Start 2P', monospace;
+  --font-body:  'VT323', 'Courier New', monospace;
 
   /* Spacing */
   --s1: 8px;
@@ -45,7 +57,7 @@ body {
   --color-surface: #0f2050;
   --color-border:  #c9a84c;
   --color-text:    #f5e6c8;
-  --color-dim:     #7a6a40;
+  --color-dim:     #b3a06a;
   --color-danger:  #ff4444;
   --color-success: #44cc44;
   --color-warn:    #ffaa00;
@@ -440,7 +452,7 @@ body::after {
 }
 
 .hero-meta {
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   color: var(--color-dim);
   letter-spacing: 2px;
   margin-top: var(--s2);
@@ -634,3 +646,19 @@ body::after {
 .tooltip-wrapper:hover .tooltip-content {
   display: block;
 }
+
+/* ── Readability pass ───────────────────────────────────────────
+   Minimum legible sizes. Press Start 2P is chunky; VT323 body copy
+   reads small below ~14px. These override the tiny defaults above. */
+.nav-links li a   { font-size: 0.8rem;  }
+.nav-phase-sep    { font-size: 0.7rem;  }
+.label            { font-size: 0.78rem; }
+.badge            { font-size: 0.72rem; }
+.copy-btn         { font-size: 0.7rem;  }
+.panel-tab        { font-size: 0.72rem; }
+.panel-content    { font-size: 0.85rem; line-height: 1.6; }
+.pixel-table      { font-size: 0.85rem; }
+.mission-meta     { font-size: 0.82rem; }
+.stat-label       { font-size: 0.82rem; line-height: 1.5; }
+.pixel-footer     { font-size: 0.82rem; }
+.tooltip-content  { font-size: 0.82rem; line-height: 1.5; }
