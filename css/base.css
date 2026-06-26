@@ -88,10 +88,10 @@ body::after {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   border-bottom: 2px solid var(--color-border);
-  padding: var(--s2) var(--s4);
+  padding: var(--s2);
   display: flex;
   align-items: center;
-  gap: var(--s4);
+  gap: var(--s3);
   flex-wrap: wrap;
 }
 
@@ -115,8 +115,9 @@ body::after {
   list-style: none;
   gap: var(--s1);
   flex-wrap: wrap;
-  flex: 1;
-  justify-content: flex-end;
+  /* Own full-width centered row below the logo — too many items to share a row */
+  flex: 1 1 100%;
+  justify-content: center;
 }
 
 .nav-links li a {
@@ -124,7 +125,7 @@ body::after {
   font-size: 0.75rem;
   color: var(--color-dim);
   text-decoration: none;
-  padding: var(--s1) var(--s2);
+  padding: var(--s1);
   border: 2px solid transparent;
   display: inline-block;
   transition: color 0.1s, border-color 0.1s;
@@ -650,7 +651,7 @@ body::after {
 /* ── Readability pass ───────────────────────────────────────────
    Minimum legible sizes. Press Start 2P is chunky; VT323 body copy
    reads small below ~14px. These override the tiny defaults above. */
-.nav-links li a   { font-size: 0.8rem;  }
+.nav-links li a   { font-size: 0.7rem;  }
 .nav-phase-sep    { font-size: 0.7rem;  }
 .label            { font-size: 0.78rem; }
 .badge            { font-size: 0.72rem; }
