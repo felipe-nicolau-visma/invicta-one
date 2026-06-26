@@ -49,6 +49,38 @@ SKILLS_DATA = [
         "techniques": ["NOISE FILTER", "GROUP BY IMPACT", "JARGON → VALUE", "ZERO MISSING"],
         "mindset": "A meticulous Product Owner who knows the difference between what the developers changed and what the client actually cares about.",
         "brief": "Takes a messy dump of raw git commits and Jira logs, strips internal noise (merges, typos, chores), groups the survivors by user impact, and rewrites them as business value. Guarantees zero shipped features are dropped — and zero un-shipped features (like a reverted change) are invented.",
+        "ex_input": """TARGET: v2.4.0
+a1b2c3 feat: add CSV export to invoice list (INV-204)
+d4e5f6 Merge branch 'main' into feature/csv-export
+99aa11 fix typo in readme
+22bb33 fix: invoice list crashed on emoji name (INV-219)
+44cc55 chore: bump eslint 8.1->8.2
+66dd77 perf: invoice list N+1 removed, ~3x faster (INV-230)
+88ee99 wip
+aabbcc feat: dark mode for dashboard (INV-241)
+ddeeff revert: dark mode for dashboard (INV-241)
+112233 security: patch XSS in comment field (SEC-12)
+445566 style: run prettier
+INV-250 · Add Portuguese (pt-PT) localization · Done
+INV-251 · Refactor auth module · In Progress""",
+        "ex_output": """## v2.4.0 — 2026-06-26
+
+### 🚀 New
+- Export your invoice list to CSV.
+- The app is now available in Portuguese (Portugal).
+
+### ✨ Improved
+- The invoice list loads ~3× faster on large accounts.
+
+### 🐛 Fixed
+- Fixed a crash when a customer's name contained emoji.
+
+### 🔒 Security
+- Closed a cross-site-scripting hole in the comment field.
+
+---
+Audit: 5 published · 9 filtered.
+(dark mode was added then reverted — did not ship, so not announced)""",
         "eval_rows": [
             ("Messy sprint dump with a reverted feature", "5 published / 9 filtered — caught dark-mode added <em>and</em> reverted (didn't ship)", None),
             ("Release with a breaking change + security dep-bump", "5 published / 5 filtered — kept the CVE bump, dropped routine ones; flagged v1 API removal", None),
@@ -72,6 +104,28 @@ SKILLS_DATA = [
         "techniques": ["GHERKIN AC", "EDGE-CASE FORECAST", "REFUSE VAGUENESS", "READY FOR DEV"],
         "mindset": "A strict QA Engineer / Technical Lead who refuses to pass vague instructions through untouched.",
         "brief": "Turns a one-sentence brain-dump or a messy refinement-meeting transcript into a fully fleshed-out user story: Context, Acceptance Criteria in Given-When-Then Gherkin, Technical Implementation Hints, and forecast edge cases. Fills gaps with explicit, labelled assumptions and refuses to let two problems hide in one ticket.",
+        "ex_input": """fix the dashboard it's slow and also dark
+mode and the numbers are wrong sometimes""",
+        "ex_output": """⚠️ Three independent outcomes — splitting.
+Fleshing the highest-priority one:
+
+## Dashboard sometimes shows wrong figures
+Type: Bug · Priority: Critical
+
+### Acceptance Criteria (Gherkin)
+Scenario: Figures match the source of truth
+  Given a known, hand-verified total
+  When the dashboard renders that metric
+  Then the value equals the verified total
+
+### Tech hints
+- Reproduce first. Suspects: cache TTL,
+  rounding, timezone bucketing, races.
+
+### Split-off stubs (separate tickets)
+- [Perf] Dashboard load is slow — needs a
+  target (e.g. <2s p95) + profiling
+- [Feature] Dark mode — needs design tokens""",
         "eval_rows": [
             ("One vague sentence: \"reset password\"", "Full story · 3 Gherkin scenarios · 2 open questions (SSO, token TTL)", None),
             ("Transcript with a tentative \"maybe offline\"", "Placement story · offline + icon change pushed to Open Questions, not silently guessed", None),
@@ -95,6 +149,28 @@ SKILLS_DATA = [
         "techniques": ["NEGATIVE PROMPTING", "SECURITY", "MISSING TESTS", "NO STYLE NITPICKS"],
         "mindset": "A senior reviewer who spends zero attention on what a linter catches, and full attention on what it never will.",
         "brief": "Analyzes a git diff against team standards and flags logic errors, security anti-patterns, missing tests, and architectural risks — while deliberately NOT nitpicking style, formatting, or naming. It will approve a clean diff and refuses to manufacture issues to look thorough.",
+        "ex_input": """+def get_user(req):
++    uid = req.args.get("id")
++    q = "SELECT * FROM users WHERE id = '" + uid + "'"
++    return db.execute(q).fetchone()
++
++def  format_name(u):
++    return u['first'] + ' ' + u['last']""",
+        "ex_output": """## PR Review — BLOCK
+
+🔴 BLOCKER — get_user, query line
+User input concatenated into SQL → SQL injection.
+Fix: db.execute(
+  "...WHERE id = ?", (uid,))
+
+🟠 MAJOR — get_user
+No test on the new data path
+(valid / missing / malicious id).
+
+Skipped (style — linter's job):
+double space + spacing in format_name.
+
+Summary: Blocking SQL injection — do not merge.""",
         "eval_rows": [
             ("SQL injection + missing test + a style distractor", "Caught the injection &amp; missing test; ignored the style", "block"),
             ("Logic bug + no timeout + a team-standards violation", "Money-math bug + 2 standards violations", "changes"),
@@ -184,6 +260,26 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
         <button class="copy-btn" onclick="copyCode('skill-{{THEME}}')">[ COPY ]</button>
       </div>
       <pre class="code-block" id="skill-{{THEME}}" style="max-height: 520px;">{{SKILL_ESCAPED}}</pre>
+    </div>
+
+    <!-- ── Worked Example ─────────────────────────────────── -->
+    <h2 class="section-title" data-animate>◆ WORKED EXAMPLE — INPUT → OUTPUT</h2>
+
+    <div class="content-section" data-label="ONE MESSY INPUT, ONE CLEAN OUTPUT" data-animate>
+      <div class="worked-example">
+        <div class="we-col we-input">
+          <div class="code-block-header"><span>▦ MESSY INPUT</span></div>
+          <pre class="code-block">{{EX_INPUT}}</pre>
+        </div>
+        <div class="we-arrow">▶</div>
+        <div class="we-col we-output">
+          <div class="code-block-header"><span>✓ SKILL OUTPUT</span></div>
+          <pre class="code-block">{{EX_OUTPUT}}</pre>
+        </div>
+      </div>
+      <p style="font-size: 0.6rem; color: var(--color-dim); margin-top: var(--s2);">
+        ↑ One of the three eval inputs, run through the skill. The full eval log lives in the SKILL.md above.
+      </p>
     </div>
 
     <!-- ── Eval Log Summary ───────────────────────────────── -->
@@ -292,6 +388,8 @@ def build_pages():
             "{{MINDSET}}": s["mindset"],
             "{{BRIEF}}": s["brief"],
             "{{SKILL_ESCAPED}}": html.escape(md_text),
+            "{{EX_INPUT}}": html.escape(s["ex_input"]),
+            "{{EX_OUTPUT}}": html.escape(s["ex_output"]),
             "{{EVAL_ROWS}}": eval_rows_html(s["eval_rows"]),
             "{{DETERMINISM}}": determinism_line(md_text),
             "{{ACCENT}}": ACCENTS[s["id"]],

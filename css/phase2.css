@@ -89,3 +89,21 @@ body.theme-sentinel  { --color-primary: #ef4444; --color-accent: #fb7185; --colo
   letter-spacing: 1px;
   transform: rotate(-3deg);
 }
+
+/* ── Worked example (before → after) ────────────────────────── */
+.worked-example {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--s2);
+  align-items: center;
+}
+.we-col { min-width: 0; }
+.we-col .code-block { margin: 0; max-height: 380px; }
+.we-input .code-block { color: #9b8fb8; }   /* raw / faded "before" */
+.we-output .code-block { color: #8effc0; }  /* clean "after" result */
+.we-arrow { font-size: 1.6rem; color: var(--color-accent); text-align: center; }
+
+@media (max-width: 768px) {
+  .worked-example { grid-template-columns: 1fr; }
+  .we-arrow { transform: rotate(90deg); padding: var(--s1) 0; }
+}

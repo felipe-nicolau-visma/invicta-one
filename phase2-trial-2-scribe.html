@@ -366,6 +366,46 @@ the split/priority decisions are pinned; prose is not.
 </pre>
     </div>
 
+    <!-- ── Worked Example ─────────────────────────────────── -->
+    <h2 class="section-title" data-animate>◆ WORKED EXAMPLE — INPUT → OUTPUT</h2>
+
+    <div class="content-section" data-label="ONE MESSY INPUT, ONE CLEAN OUTPUT" data-animate>
+      <div class="worked-example">
+        <div class="we-col we-input">
+          <div class="code-block-header"><span>▦ MESSY INPUT</span></div>
+          <pre class="code-block">fix the dashboard it&#x27;s slow and also dark
+mode and the numbers are wrong sometimes</pre>
+        </div>
+        <div class="we-arrow">▶</div>
+        <div class="we-col we-output">
+          <div class="code-block-header"><span>✓ SKILL OUTPUT</span></div>
+          <pre class="code-block">⚠️ Three independent outcomes — splitting.
+Fleshing the highest-priority one:
+
+## Dashboard sometimes shows wrong figures
+Type: Bug · Priority: Critical
+
+### Acceptance Criteria (Gherkin)
+Scenario: Figures match the source of truth
+  Given a known, hand-verified total
+  When the dashboard renders that metric
+  Then the value equals the verified total
+
+### Tech hints
+- Reproduce first. Suspects: cache TTL,
+  rounding, timezone bucketing, races.
+
+### Split-off stubs (separate tickets)
+- [Perf] Dashboard load is slow — needs a
+  target (e.g. &lt;2s p95) + profiling
+- [Feature] Dark mode — needs design tokens</pre>
+        </div>
+      </div>
+      <p style="font-size: 0.6rem; color: var(--color-dim); margin-top: var(--s2);">
+        ↑ One of the three eval inputs, run through the skill. The full eval log lives in the SKILL.md above.
+      </p>
+    </div>
+
     <!-- ── Eval Log Summary ───────────────────────────────── -->
     <h2 class="section-title" data-animate>◆ EVAL LOG — 3 MESSY INPUTS</h2>
 

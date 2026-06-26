@@ -291,6 +291,46 @@ suggested fix is not.
 </pre>
     </div>
 
+    <!-- ── Worked Example ─────────────────────────────────── -->
+    <h2 class="section-title" data-animate>◆ WORKED EXAMPLE — INPUT → OUTPUT</h2>
+
+    <div class="content-section" data-label="ONE MESSY INPUT, ONE CLEAN OUTPUT" data-animate>
+      <div class="worked-example">
+        <div class="we-col we-input">
+          <div class="code-block-header"><span>▦ MESSY INPUT</span></div>
+          <pre class="code-block">+def get_user(req):
++    uid = req.args.get(&quot;id&quot;)
++    q = &quot;SELECT * FROM users WHERE id = &#x27;&quot; + uid + &quot;&#x27;&quot;
++    return db.execute(q).fetchone()
++
++def  format_name(u):
++    return u[&#x27;first&#x27;] + &#x27; &#x27; + u[&#x27;last&#x27;]</pre>
+        </div>
+        <div class="we-arrow">▶</div>
+        <div class="we-col we-output">
+          <div class="code-block-header"><span>✓ SKILL OUTPUT</span></div>
+          <pre class="code-block">## PR Review — BLOCK
+
+🔴 BLOCKER — get_user, query line
+User input concatenated into SQL → SQL injection.
+Fix: db.execute(
+  &quot;...WHERE id = ?&quot;, (uid,))
+
+🟠 MAJOR — get_user
+No test on the new data path
+(valid / missing / malicious id).
+
+Skipped (style — linter&#x27;s job):
+double space + spacing in format_name.
+
+Summary: Blocking SQL injection — do not merge.</pre>
+        </div>
+      </div>
+      <p style="font-size: 0.6rem; color: var(--color-dim); margin-top: var(--s2);">
+        ↑ One of the three eval inputs, run through the skill. The full eval log lives in the SKILL.md above.
+      </p>
+    </div>
+
     <!-- ── Eval Log Summary ───────────────────────────────── -->
     <h2 class="section-title" data-animate>◆ EVAL LOG — 3 MESSY INPUTS</h2>
 

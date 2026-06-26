@@ -300,6 +300,56 @@ prose phrasing is not pinned (and should not be).
 </pre>
     </div>
 
+    <!-- ── Worked Example ─────────────────────────────────── -->
+    <h2 class="section-title" data-animate>◆ WORKED EXAMPLE — INPUT → OUTPUT</h2>
+
+    <div class="content-section" data-label="ONE MESSY INPUT, ONE CLEAN OUTPUT" data-animate>
+      <div class="worked-example">
+        <div class="we-col we-input">
+          <div class="code-block-header"><span>▦ MESSY INPUT</span></div>
+          <pre class="code-block">TARGET: v2.4.0
+a1b2c3 feat: add CSV export to invoice list (INV-204)
+d4e5f6 Merge branch &#x27;main&#x27; into feature/csv-export
+99aa11 fix typo in readme
+22bb33 fix: invoice list crashed on emoji name (INV-219)
+44cc55 chore: bump eslint 8.1-&gt;8.2
+66dd77 perf: invoice list N+1 removed, ~3x faster (INV-230)
+88ee99 wip
+aabbcc feat: dark mode for dashboard (INV-241)
+ddeeff revert: dark mode for dashboard (INV-241)
+112233 security: patch XSS in comment field (SEC-12)
+445566 style: run prettier
+INV-250 · Add Portuguese (pt-PT) localization · Done
+INV-251 · Refactor auth module · In Progress</pre>
+        </div>
+        <div class="we-arrow">▶</div>
+        <div class="we-col we-output">
+          <div class="code-block-header"><span>✓ SKILL OUTPUT</span></div>
+          <pre class="code-block">## v2.4.0 — 2026-06-26
+
+### 🚀 New
+- Export your invoice list to CSV.
+- The app is now available in Portuguese (Portugal).
+
+### ✨ Improved
+- The invoice list loads ~3× faster on large accounts.
+
+### 🐛 Fixed
+- Fixed a crash when a customer&#x27;s name contained emoji.
+
+### 🔒 Security
+- Closed a cross-site-scripting hole in the comment field.
+
+---
+Audit: 5 published · 9 filtered.
+(dark mode was added then reverted — did not ship, so not announced)</pre>
+        </div>
+      </div>
+      <p style="font-size: 0.6rem; color: var(--color-dim); margin-top: var(--s2);">
+        ↑ One of the three eval inputs, run through the skill. The full eval log lives in the SKILL.md above.
+      </p>
+    </div>
+
     <!-- ── Eval Log Summary ───────────────────────────────── -->
     <h2 class="section-title" data-animate>◆ EVAL LOG — 3 MESSY INPUTS</h2>
 
