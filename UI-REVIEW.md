@@ -96,3 +96,13 @@ Fixed via a keystone change in `base.css` (cascades to all 7 pages) plus paralle
 - **`prefers-reduced-motion`** — gate the scanline/starfield/blink animations behind a reduced-motion media query (accessibility + battery). ~10 lines in `base.css`.
 - **Inline-style debt** — the ~60 inline `font-size`/`color` values are a maintenance hazard (they bypass the design system and re-broke the contrast fix once). Consider migrating them to utility classes.
 - **11px code tokens** — artifact filenames (e.g. `PR-Reviewer.md`) render at 0.65rem ≈ 11px. Readable, but bumping the shared rule to 0.75rem would be cleaner.
+
+---
+
+## Follow-up issues (found + fixed after the review)
+
+Surfaced from screenshots / mobile testing once the type was readable:
+
+- **Nav wrapped badly** — 8 long pixel-font labels couldn't share a row with the logo, so the last item dropped to a lonely second line. Links now sit on their own full-width centered row below the logo: one row when it fits, balanced wrapping when it doesn't.
+- **Table tooltips clipped** — `.pixel-table` was `display:block; overflow-x:auto`, and `overflow:auto` clips even with no scrollbar, so cell tooltips were cut off on desktop. Tables are now normal tables inside a `.table-scroll` wrapper that only scrolls at mobile widths; desktop tooltips escape the box.
+- **Mobile horizontal scroll** — the home-page card grids used inline `grid-template-columns: 1fr 1fr 1fr`, which overrode the responsive stack rule and overflowed phones. Mobile rule is now `!important` so the cards stack. Verified no horizontal overflow at 375px on every page.
