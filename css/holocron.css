@@ -10,10 +10,11 @@
   --color-surface: #150028;
   --color-border:  #4422aa;
   --color-text:    #d0c0ff;
-  --color-dim:     #443366;
-  --color-glow:    #8866ff;
+  --color-dim:     #8877aa;  /* was #443366 (1.65:1 on bg) — lightened for WCAG AA, keeps muted-purple identity */
+  --color-glow:    #9a78ff;  /* was #8866ff (3.5:1 on bg) — lightened for WCAG AA, keeps purple-glow identity */
   --color-amber:   #ffaa00;
   --color-crystal: #ffcc44;
+  --color-danger:  #ff5e5e;  /* local override; base #ff4444 is 4.43:1 on bg — lightened to pass AA, keeps red */
 }
 
 body {
@@ -200,7 +201,7 @@ body {
   gap: var(--s2);
   padding: var(--s2) var(--s1);
   border-bottom: 1px solid rgba(68,34,170,0.3);
-  font-size: 0.65rem;
+  font-size: 0.85rem;  /* was 0.65rem (~10px) — content text bumped to legible body size */
   opacity: 0;
   transform: translateX(-8px);
   transition: opacity 0.3s, transform 0.3s;
@@ -267,7 +268,7 @@ body {
 
 .audience-tag {
   display: inline-block;
-  font-size: 0.55rem;
+  font-size: 0.72rem;  /* was 0.55rem (~8px) — secondary label bumped to label floor */
   padding: 2px 8px;
   margin-bottom: var(--s2);
   letter-spacing: 2px;
@@ -287,7 +288,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.6rem;
+  font-size: 0.72rem;  /* was 0.6rem (~9px) — badge bumped to label floor */
   padding: var(--s1) var(--s2);
   background: rgba(119,68,204,0.15);
   border: 1px solid var(--color-glow);

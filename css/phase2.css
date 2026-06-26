@@ -10,7 +10,7 @@ body[class*="theme-"] {
   --color-bg:      #14101e;
   --color-surface: #1d1730;
   --color-text:    #ece8f5;
-  --color-dim:     #6f5f92;
+  --color-dim:     #9384b8; /* was #6f5f92 (3.32:1 — failed AA); lightened, same purple hue, 5.55:1 on bg */
   --color-primary: #8b5cf6;
   --color-accent:  #b794f6;
   --color-border:  #3a2f55;
@@ -58,7 +58,7 @@ body.theme-sentinel  { --color-primary: #ef4444; --color-accent: #fb7185; --colo
 /* ── Skill tags (technique chips) ───────────────────────────── */
 .skill-tag {
   display: inline-block;
-  font-size: 0.55rem;
+  font-size: 0.72rem; /* was 0.55rem (~8–9px, too small); badge floor */
   padding: 3px 7px;
   margin: 2px;
   color: var(--color-accent);
@@ -70,7 +70,7 @@ body.theme-sentinel  { --color-primary: #ef4444; --color-accent: #fb7185; --colo
 /* ── Verdict badges (Code Sentinel eval summary) ────────────── */
 .verdict-badge {
   display: inline-block;
-  font-size: 0.55rem;
+  font-size: 0.72rem; /* was 0.55rem (~8–9px, too small); badge floor */
   padding: 3px 7px;
   border: 1px solid currentColor;
   white-space: nowrap;
@@ -85,7 +85,7 @@ body.theme-sentinel  { --color-primary: #ef4444; --color-accent: #fb7185; --colo
   border: 2px dashed var(--color-success);
   color: var(--color-success);
   padding: var(--s1) var(--s2);
-  font-size: 0.6rem;
+  font-size: 0.72rem; /* was 0.6rem (~9–10px, too small); stamp/badge floor */
   letter-spacing: 1px;
   transform: rotate(-3deg);
 }

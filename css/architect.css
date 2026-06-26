@@ -11,7 +11,7 @@
   --color-border:  #c4602a;
   --color-border2: #5cb85c;
   --color-text:    #f0d5c0;
-  --color-dim:     #8a6050;
+  --color-dim:     #b08a72; /* lightened from #8a6050 (3.47:1, failed AA) → 6.03:1 vs bg / 5.54:1 vs surface; warm terracotta-tan preserved */
   --color-stone:   #b0a090;
   --color-green:   #5cb85c;
 }
@@ -150,7 +150,7 @@ body {
 }
 
 .banned-protocol-label {
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   color: var(--color-danger);
   letter-spacing: 2px;
   margin-top: var(--s2);
@@ -176,7 +176,7 @@ body {
   position: absolute;
   top: var(--s2);
   right: var(--s3);
-  font-size: 0.5rem;
+  font-size: 0.72rem;
   color: var(--color-dim);
   letter-spacing: 3px;
 }
@@ -195,7 +195,7 @@ body {
 }
 
 .proposal-meta {
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   color: var(--color-dim);
   line-height: 2;
 }
@@ -214,8 +214,8 @@ body {
 
 .proposal-stat-inline {
   color: var(--color-green);
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.75rem;
+  font-family: 'Press Start 2P', monospace; /* short inline stat label — kept pixel font, bumped size per borderline rule */
+  font-size: 0.8rem;
 }
 
 /* Constraint info strip */
@@ -233,7 +233,7 @@ body {
   display: flex;
   align-items: center;
   gap: var(--s1);
-  font-size: 0.55rem;
+  font-size: 0.72rem;
 }
 
 .constraint-item .c-icon { color: var(--color-success); }
@@ -245,7 +245,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: var(--s1);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   padding: var(--s1) var(--s2);
   background: rgba(232,114,74,0.1);
   border: 1px solid var(--color-border);

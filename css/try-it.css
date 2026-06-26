@@ -111,7 +111,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   padding: 3px 8px;
   background: #cc5500;
   border: 1px solid #ff8800;
@@ -132,7 +132,7 @@
 
 .try-it-close {
   font-family: var(--font-pixel);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   background: transparent;
   color: #888;
   border: 1px solid #444;
@@ -175,7 +175,7 @@
 }
 
 .apikey-label {
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   color: #ff8800;
   white-space: nowrap;
 }
@@ -200,7 +200,7 @@
 
 .apikey-save-btn {
   font-family: var(--font-pixel);
-  font-size: 0.55rem;
+  font-size: 0.72rem;
   background: #cc5500;
   color: #fff;
   border: 1px solid #ff8800;
@@ -213,14 +213,14 @@
 .apikey-save-btn:hover { background: #e06000; }
 
 .apikey-status {
-  font-size: 0.55rem;
+  font-size: 0.72rem;
   color: #44cc44;
   white-space: nowrap;
 }
 
 .apikey-hint {
-  font-size: 0.55rem;
-  color: #666;
+  font-size: 0.72rem;
+  color: #999;
   margin-top: 4px;
   line-height: 1.8;
 }
@@ -236,14 +236,14 @@
 }
 
 .system-prompt-toggle .spt-label {
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   color: #888;
   letter-spacing: 1px;
 }
 
 .system-prompt-toggle .spt-arrow {
-  font-size: 0.6rem;
-  color: #555;
+  font-size: 0.72rem;
+  color: #999;
   transition: transform 0.2s;
 }
 
@@ -255,7 +255,7 @@
   border: 1px solid #222;
   padding: var(--s2);
   font-family: 'Courier New', monospace;
-  font-size: 0.65rem;
+  font-size: 0.9rem;
   color: #44aa44;
   white-space: pre-wrap;
   max-height: 160px;
@@ -269,7 +269,7 @@
 /* ── User input ─────────────────────────────────────────────── */
 .input-section label {
   display: block;
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   color: #888;
   margin-bottom: 6px;
   letter-spacing: 1px;
@@ -329,8 +329,8 @@
 }
 
 .send-note {
-  font-size: 0.55rem;
-  color: #555;
+  font-size: 0.72rem;
+  color: #999;
   line-height: 1.8;
 }
 
@@ -350,7 +350,7 @@
   padding: var(--s1) var(--s2);
   background: rgba(255,136,0,0.06);
   border-bottom: 1px solid #222;
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   color: #ff8800;
 }
 
@@ -419,7 +419,7 @@
 
 .try-it-banner-text {
   flex: 1;
-  font-size: 0.65rem;
+  font-size: 0.9rem;
   color: #ff8800;
   line-height: 2;
   min-width: 200px;
