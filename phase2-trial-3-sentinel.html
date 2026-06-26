@@ -66,10 +66,10 @@
         <div class="progress-bar"><div class="progress-fill" style="--progress: 100%;"></div></div>
       </div>
 
-      <p style="font-size: 0.7rem; color: var(--color-accent); margin-top: var(--s3); line-height: 2.2;">
+      <p style="font-size: 0.9rem; color: var(--color-accent); margin-top: var(--s3); line-height: 2.2;">
         <strong>Logic mindset:</strong> A senior reviewer who spends zero attention on what a linter catches, and full attention on what it never will.
       </p>
-      <p style="font-size: 0.7rem; color: var(--color-text); margin-top: var(--s2); line-height: 2.2;">
+      <p style="font-size: 0.9rem; color: var(--color-text); margin-top: var(--s2); line-height: 2.2;">
         Analyzes a git diff against team standards and flags logic errors, security anti-patterns, missing tests, and architectural risks — while deliberately NOT nitpicking style, formatting, or naming. It will approve a clean diff and refuses to manufacture issues to look thorough.
       </p>
     </div>
@@ -78,7 +78,7 @@
     <h2 class="section-title" data-animate>THE SKILL — PR-Reviewer.md</h2>
 
     <div class="content-section" data-label="PRODUCTION-READY SKILL.md" data-animate>
-      <p style="font-size: 0.65rem; color: var(--color-dim); line-height: 2; margin-bottom: var(--s3);">
+      <p style="font-size: 0.9rem; color: var(--color-dim); line-height: 2; margin-bottom: var(--s3);">
         The complete, committed skill file. Pull it into any agent's skills directory — frontmatter,
         guardrails, deterministic procedure, output contract, and the eval log are all self-contained.
       </p>
@@ -326,7 +326,7 @@ double space + spacing in format_name.
 Summary: Blocking SQL injection — do not merge.</pre>
         </div>
       </div>
-      <p style="font-size: 0.6rem; color: var(--color-dim); margin-top: var(--s2);">
+      <p style="font-size: 0.9rem; color: var(--color-dim); margin-top: var(--s2);">
         ↑ One of the three eval inputs, run through the skill. The full eval log lives in the SKILL.md above.
       </p>
     </div>
@@ -345,7 +345,7 @@ Summary: Blocking SQL injection — do not merge.</pre>
           <tr><td>03</td><td>Clean, parameterized, tested diff</td><td><span class="verdict-badge verdict-approve">APPROVE</span> &nbsp;Approved — did not invent a problem</td></tr>
         </tbody>
       </table>
-      <p style="font-size: 0.6rem; color: var(--color-text); line-height: 2; margin-top: var(--s3);">
+      <p style="font-size: 0.9rem; color: var(--color-text); line-height: 2; margin-top: var(--s3);">
         <strong style="color: var(--color-accent);">Determinism:</strong> Each input was re-run. The same findings appeared at the same severities and the verdict was identical every time (BLOCK / REQUEST CHANGES / APPROVE). Critically, the style distractor in Input 1 was **never** promoted to a finding across runs, and Input 3 was **never** padded with a manufactured issue — the skill approved it every time. Findings, severities, and verdict are pinned; the wording of each suggested fix is not.
       </p>
       <div style="text-align: center; margin-top: var(--s3);">

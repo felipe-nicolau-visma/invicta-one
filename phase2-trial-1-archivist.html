@@ -66,10 +66,10 @@
         <div class="progress-bar"><div class="progress-fill" style="--progress: 100%;"></div></div>
       </div>
 
-      <p style="font-size: 0.7rem; color: var(--color-accent); margin-top: var(--s3); line-height: 2.2;">
+      <p style="font-size: 0.9rem; color: var(--color-accent); margin-top: var(--s3); line-height: 2.2;">
         <strong>Logic mindset:</strong> A meticulous Product Owner who knows the difference between what the developers changed and what the client actually cares about.
       </p>
-      <p style="font-size: 0.7rem; color: var(--color-text); margin-top: var(--s2); line-height: 2.2;">
+      <p style="font-size: 0.9rem; color: var(--color-text); margin-top: var(--s2); line-height: 2.2;">
         Takes a messy dump of raw git commits and Jira logs, strips internal noise (merges, typos, chores), groups the survivors by user impact, and rewrites them as business value. Guarantees zero shipped features are dropped — and zero un-shipped features (like a reverted change) are invented.
       </p>
     </div>
@@ -78,7 +78,7 @@
     <h2 class="section-title" data-animate>THE SKILL — Release-Notes-Writer.md</h2>
 
     <div class="content-section" data-label="PRODUCTION-READY SKILL.md" data-animate>
-      <p style="font-size: 0.65rem; color: var(--color-dim); line-height: 2; margin-bottom: var(--s3);">
+      <p style="font-size: 0.9rem; color: var(--color-dim); line-height: 2; margin-bottom: var(--s3);">
         The complete, committed skill file. Pull it into any agent's skills directory — frontmatter,
         guardrails, deterministic procedure, output contract, and the eval log are all self-contained.
       </p>
@@ -345,7 +345,7 @@ Audit: 5 published · 9 filtered.
 (dark mode was added then reverted — did not ship, so not announced)</pre>
         </div>
       </div>
-      <p style="font-size: 0.6rem; color: var(--color-dim); margin-top: var(--s2);">
+      <p style="font-size: 0.9rem; color: var(--color-dim); margin-top: var(--s2);">
         ↑ One of the three eval inputs, run through the skill. The full eval log lives in the SKILL.md above.
       </p>
     </div>
@@ -364,7 +364,7 @@ Audit: 5 published · 9 filtered.
           <tr><td>03</td><td>Almost all noise + a commit/Jira duplicate</td><td>1 published / 7 filtered — deduped commit & PRIV-7 into one entry</td></tr>
         </tbody>
       </table>
-      <p style="font-size: 0.6rem; color: var(--color-text); line-height: 2; margin-top: var(--s3);">
+      <p style="font-size: 0.9rem; color: var(--color-text); line-height: 2; margin-top: var(--s3);">
         <strong style="color: var(--color-accent);">Determinism:</strong> Input 1 was re-run three times. On every pass the bucketing was identical (5 published / 9 filtered), the revert pair was excluded, and the not-yet-shipped auth refactor was filtered. Only the surface wording of the customer-facing lines varied within a few words. The **decisions** — noise vs. user-facing, dedupe, reverted-feature exclusion, "Done but internal" exclusion (OPS-3) — were stable across runs. That decision-level stability is the skill's determinism guarantee; prose phrasing is not pinned (and should not be).
       </p>
       <div style="text-align: center; margin-top: var(--s3);">
