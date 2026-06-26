@@ -236,11 +236,16 @@ body::after {
 
 @media (max-width: 768px) {
   .two-col {
-    grid-template-columns: 1fr;
+    /* !important to beat inline grid-template-columns on the card grids */
+    grid-template-columns: 1fr !important;
   }
 
   .page-wrapper {
     padding: var(--s2);
+  }
+
+  .table-scroll {
+    overflow-x: auto;
   }
 }
 
@@ -311,9 +316,13 @@ body::after {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.65rem;
-  overflow-x: auto;
-  display: block;
 }
+
+/* .table-scroll wraps wide tables. Desktop: overflow stays visible (default)
+   so cell tooltips can escape the table box — overflow:auto would clip them
+   even with no scrollbar. Mobile: the max-width media query turns on
+   overflow-x:auto for horizontal scroll. (No desktop rule here on purpose —
+   a later `overflow:visible` would override the media query.) */
 
 .pixel-table th,
 .pixel-table td {

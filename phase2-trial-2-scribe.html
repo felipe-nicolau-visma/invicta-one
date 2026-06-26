@@ -410,6 +410,7 @@ Scenario: Figures match the source of truth
     <h2 class="section-title" data-animate>◆ EVAL LOG — 3 MESSY INPUTS</h2>
 
     <div class="content-section" data-label="DETERMINISM PROOF" data-animate>
+      <div class="table-scroll">
       <table class="pixel-table" id="eval-table-scribe">
         <thead>
           <tr><th>#</th><th>MESSY INPUT</th><th>RESULT</th></tr>
@@ -420,6 +421,7 @@ Scenario: Figures match the source of truth
           <tr><td>03</td><td>Three problems conflated in one line</td><td>Split into 3 tickets — fleshed the correctness bug first, stubbed perf + dark-mode</td></tr>
         </tbody>
       </table>
+      </div>
       <p style="font-size: 0.9rem; color: var(--color-text); line-height: 2; margin-top: var(--s3);">
         <strong style="color: var(--color-accent);">Determinism:</strong> Inputs 1 and 3 were each re-run. The section structure (Title → Context → Gherkin AC → Hints → Edge Cases → Assumptions → Open Questions → Definition of Ready) was identical every time. For Input 3 the skill split into the same three tickets and prioritized the correctness bug first on every run. The set of acceptance scenarios and open questions was stable; only their wording shifted slightly. Structure and the split/priority decisions are pinned; prose is not.
       </p>

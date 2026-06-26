@@ -335,6 +335,7 @@ Summary: Blocking SQL injection — do not merge.</pre>
     <h2 class="section-title" data-animate>◆ EVAL LOG — 3 MESSY INPUTS</h2>
 
     <div class="content-section" data-label="DETERMINISM PROOF" data-animate>
+      <div class="table-scroll">
       <table class="pixel-table" id="eval-table-sentinel">
         <thead>
           <tr><th>#</th><th>MESSY INPUT</th><th>RESULT</th></tr>
@@ -345,6 +346,7 @@ Summary: Blocking SQL injection — do not merge.</pre>
           <tr><td>03</td><td>Clean, parameterized, tested diff</td><td><span class="verdict-badge verdict-approve">APPROVE</span> &nbsp;Approved — did not invent a problem</td></tr>
         </tbody>
       </table>
+      </div>
       <p style="font-size: 0.9rem; color: var(--color-text); line-height: 2; margin-top: var(--s3);">
         <strong style="color: var(--color-accent);">Determinism:</strong> Each input was re-run. The same findings appeared at the same severities and the verdict was identical every time (BLOCK / REQUEST CHANGES / APPROVE). Critically, the style distractor in Input 1 was **never** promoted to a finding across runs, and Input 3 was **never** padded with a manufactured issue — the skill approved it every time. Findings, severities, and verdict are pinned; the wording of each suggested fix is not.
       </p>

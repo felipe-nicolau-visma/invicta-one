@@ -354,6 +354,7 @@ Audit: 5 published · 9 filtered.
     <h2 class="section-title" data-animate>◆ EVAL LOG — 3 MESSY INPUTS</h2>
 
     <div class="content-section" data-label="DETERMINISM PROOF" data-animate>
+      <div class="table-scroll">
       <table class="pixel-table" id="eval-table-archivist">
         <thead>
           <tr><th>#</th><th>MESSY INPUT</th><th>RESULT</th></tr>
@@ -364,6 +365,7 @@ Audit: 5 published · 9 filtered.
           <tr><td>03</td><td>Almost all noise + a commit/Jira duplicate</td><td>1 published / 7 filtered — deduped commit & PRIV-7 into one entry</td></tr>
         </tbody>
       </table>
+      </div>
       <p style="font-size: 0.9rem; color: var(--color-text); line-height: 2; margin-top: var(--s3);">
         <strong style="color: var(--color-accent);">Determinism:</strong> Input 1 was re-run three times. On every pass the bucketing was identical (5 published / 9 filtered), the revert pair was excluded, and the not-yet-shipped auth refactor was filtered. Only the surface wording of the customer-facing lines varied within a few words. The **decisions** — noise vs. user-facing, dedupe, reverted-feature exclusion, "Done but internal" exclusion (OPS-3) — were stable across runs. That decision-level stability is the skill's determinism guarantee; prose phrasing is not pinned (and should not be).
       </p>
