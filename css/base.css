@@ -134,6 +134,17 @@ body::after {
   animation: blink 1s step-end infinite;
 }
 
+/* Phase divider in nav (shared so Phase 1 pages style it too) */
+.nav-phase-sep {
+  align-self: center;
+  font-size: 0.55rem;
+  color: var(--color-dim);
+  padding: 0 var(--s1);
+  letter-spacing: 1px;
+  list-style: none;
+}
+@media (max-width: 768px) { .nav-phase-sep { display: none; } }
+
 .nav-toggle {
   display: none;
   font-family: var(--font-pixel);

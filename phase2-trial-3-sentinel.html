@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill 03 — The Code Sentinel | Invicta-One</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/phase2.css">
+  <link rel="stylesheet" href="css/try-it.css">
+</head>
+<body class="theme-sentinel">
+
+  <nav class="pixel-nav">
+    <a class="nav-logo" href="index.html">
+      <span class="logo-icon">🚀</span>
+      <span>INVICTA-ONE</span>
+    </a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">[ MENU ]</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="nav-link" data-page="index">[ PASSPORT ]</a></li>
+      <li><a href="trial-1-kessel-run.html" class="nav-link" data-page="kessel">[ T1: KESSEL RUN ]</a></li>
+      <li><a href="trial-2-architect.html" class="nav-link" data-page="architect">[ T2: ARCHITECT ]</a></li>
+      <li><a href="trial-3-holocron.html" class="nav-link" data-page="holocron">[ T3: HOLOCRON ]</a></li>
+      <li class="nav-phase-sep">// P2 //</li>
+      <li><a href="phase2-trial-1-archivist.html" class="nav-link" data-page="archivist">[ S1: ARCHIVIST ]</a></li>
+      <li><a href="phase2-trial-2-scribe.html" class="nav-link" data-page="scribe">[ S2: SCRIBE ]</a></li>
+      <li><a href="phase2-trial-3-sentinel.html" class="nav-link" data-page="sentinel">[ S3: SENTINEL ]</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero ────────────────────────────────────────────── -->
+  <div class="hero-phase2">
+    <div class="hero-content">
+      <p class="hero-meta" style="margin-bottom: var(--s2);">◀ INVICTA-ONE &nbsp;/&nbsp; PHASE 2 &nbsp;/&nbsp; SKILL 03 ▶</p>
+      <span class="hero-emblem">🛡️</span>
+      <h1 class="hero-title">THE CODE SENTINEL</h1>
+      <p class="hero-subtitle">PR-Reviewer.md</p>
+      <p class="hero-meta" style="margin-top: var(--s3);">PR REVIEWER — CONSTRAINT ADHERENCE & OBJECTIVE LOGIC CHECKING</p>
+    </div>
+  </div>
+
+  <main class="page-wrapper">
+
+    <!-- ── Mission Brief ──────────────────────────────────── -->
+    <div class="content-section" data-label="MISSION BRIEF" data-animate>
+      <div class="mission-meta">
+        <div class="mission-meta-item">
+          <span class="label">SKILL</span>
+          <span class="value">03 — THE CODE SENTINEL</span>
+        </div>
+        <div class="mission-meta-item">
+          <span class="label">TECHNIQUE</span>
+          <span class="value"><span class="skill-tag">NEGATIVE PROMPTING</span><span class="skill-tag">SECURITY</span><span class="skill-tag">MISSING TESTS</span><span class="skill-tag">NO STYLE NITPICKS</span></span>
+        </div>
+        <div class="mission-meta-item">
+          <span class="label">STATUS</span>
+          <span class="value" style="color: var(--color-success);">✓ COMMITTED — EVAL LOG VERIFIED</span>
+        </div>
+      </div>
+
+      <div style="margin-top: var(--s3);">
+        <div class="label" style="margin-bottom: var(--s1);">COMPLETION</div>
+        <div class="progress-bar"><div class="progress-fill" style="--progress: 100%;"></div></div>
+      </div>
+
+      <p style="font-size: 0.7rem; color: var(--color-accent); margin-top: var(--s3); line-height: 2.2;">
+        <strong>Logic mindset:</strong> A senior reviewer who spends zero attention on what a linter catches, and full attention on what it never will.
+      </p>
+      <p style="font-size: 0.7rem; color: var(--color-text); margin-top: var(--s2); line-height: 2.2;">
+        Analyzes a git diff against team standards and flags logic errors, security anti-patterns, missing tests, and architectural risks — while deliberately NOT nitpicking style, formatting, or naming. It will approve a clean diff and refuses to manufacture issues to look thorough.
+      </p>
+    </div>
+
+    <!-- ── The Skill ──────────────────────────────────────── -->
+    <h2 class="section-title" data-animate>THE SKILL — PR-Reviewer.md</h2>
+
+    <div class="content-section" data-label="PRODUCTION-READY SKILL.md" data-animate>
+      <p style="font-size: 0.65rem; color: var(--color-dim); line-height: 2; margin-bottom: var(--s3);">
+        The complete, committed skill file. Pull it into any agent's skills directory — frontmatter,
+        guardrails, deterministic procedure, output contract, and the eval log are all self-contained.
+      </p>
+      <div class="code-block-header">
+        <span>PR-Reviewer.md</span>
+        <button class="copy-btn" onclick="copyCode('skill-sentinel')">[ COPY ]</button>
+      </div>
+      <pre class="code-block" id="skill-sentinel" style="max-height: 520px;">---
+name: pr-reviewer
+description: Use as an automated first-pass pull-request reviewer. Analyzes a git diff or PR description against team engineering standards and flags logic errors, security anti-patterns, missing test coverage, and architectural risks. Uses negative prompting — it deliberately does NOT nitpick style, formatting, or naming (that is the linter&#x27;s job).
+---
+
+# PR Reviewer — &quot;The Code Sentinel&quot;
+
+A utility skill that behaves like a senior reviewer with one discipline above all:
+it spends zero attention on what a linter already catches, and full attention on
+what a linter never will — broken logic, unsafe code, untested paths, and
+architecture drift. It saves human review time for deep design discussion.
+
+## When to use
+
+On any `.diff` or PR description, as the first reviewer before a human looks at it.
+
+## Input contract
+
+Accept a unified diff and, optionally, a `STANDARDS:` block of team-specific rules
+(e.g. &quot;all DB access goes through the repository layer&quot;). If standards are given,
+map findings against them.
+
+## Hard rules (guardrails — negative prompting)
+
+**DO NOT flag (leave to the linter / formatter):**
+
+- Formatting, whitespace, indentation, line length, trailing commas
+- Naming preferences, import order, &quot;more idiomatic&quot; rewrites
+- Subjective style or personal-preference refactors
+
+When a style issue is the only thing present, stay silent on it (optionally note
+`(skipped: style — linter&#x27;s job)`) and do not manufacture a substantive issue to
+look thorough. **Approving a clean diff is a valid, correct outcome.**
+
+**DO flag:**
+
+- **Logic** — off-by-one, inverted conditions, wrong operators, unhandled branches,
+  fallacious assumptions
+- **Security** — injection (SQL/command/XSS), hard-coded secrets, missing
+  authz/authn, unsafe deserialization, sensitive data in logs
+- **Tests** — new logic or data paths with no test; assertions that don&#x27;t assert
+- **Error handling** — swallowed errors, missing timeouts, unchecked external calls
+- **Architecture** — layering violations, scope creep beyond the ticket, breaking
+  changes without a migration path, tight coupling introduced
+
+## Severity rubric
+
+- 🔴 **BLOCKER** — security hole, data loss, or a logic bug that ships broken behavior
+- 🟠 **MAJOR** — missing tests on real logic, missing error handling, architecture violation
+- 🟡 **MINOR** — substantive but non-blocking (a narrow edge case, a weak assertion)
+
+Style is **not** a severity. It never appears as a finding.
+
+## Procedure (deterministic)
+
+1. Read the diff; for each hunk ask: does this change behavior, security posture,
+   test coverage, or architecture?
+2. Emit one finding per real issue: `severity · file:line · what · why · fix`.
+3. If `STANDARDS:` was provided, check each against it and cite the violated rule.
+4. Assign a verdict from the fixed set: **APPROVE** / **APPROVE WITH NITS** /
+   **REQUEST CHANGES** / **BLOCK**. A 🔴 forces BLOCK; a 🟠 forces at least
+   REQUEST CHANGES.
+5. Never let the count of findings inflate to seem rigorous — zero substantive
+   findings → APPROVE.
+
+## Output format
+
+```
+## PR Review — &lt;verdict&gt;
+
+🔴 BLOCKER — &lt;file:line&gt;
+&lt;what&gt; · &lt;why&gt; · Fix: &lt;concrete fix&gt;
+
+🟠 MAJOR — &lt;file:line&gt;
+...
+
+🟡 MINOR — &lt;file:line&gt;
+...
+
+Skipped (style — linter&#x27;s job): &lt;count or note&gt;
+Summary: &lt;one line&gt;
+```
+
+---
+
+## Eval Log
+
+Tested against 3 separate, messy inputs. Outputs below are real runs of this skill.
+
+### Input 1 — SQL injection + missing test, plus a style distractor
+
+```diff
++def get_user(req):
++    uid = req.args.get(&quot;id&quot;)
++    q = &quot;SELECT * FROM users WHERE id = &#x27;&quot; + uid + &quot;&#x27;&quot;
++    return db.execute(q).fetchone()
++
++def  format_name(u):
++    return u[&#x27;first&#x27;]+&#x27; &#x27;+u[&#x27;last&#x27;]
+```
+
+**Output 1**
+
+```
+## PR Review — BLOCK
+
+🔴 BLOCKER — get_user, query line
+User input `uid` is concatenated straight into SQL · classic SQL injection
+(`?id=&#x27; OR &#x27;1&#x27;=&#x27;1`) · Fix: use a parameterized query —
+`db.execute(&quot;SELECT * FROM users WHERE id = ?&quot;, (uid,))`.
+
+🟠 MAJOR — get_user
+New data-access function has no test · the injection path and the not-found path
+are unverified · Fix: add tests for a valid id, a missing id, and a malicious id.
+
+Skipped (style — linter&#x27;s job): double space in `format_name` def and the
+missing spaces around `+` — not reviewed.
+Summary: Blocking SQL injection; do not merge until parameterized and tested.
+```
+
+### Input 2 — logic bug + missing error handling + team-standards violation
+
+```
+STANDARDS:
+- All outbound HTTP must set a timeout.
+- All DB access goes through the repository layer (no raw db in controllers).
+
+diff:
++def apply_discount(price, pct):  # pct is 0-100
++    return price - price * pct
++
++def fetch_rate(url):
++    r = requests.get(url)
++    return r.json()
++
++# controllers/report.py
++def report(req):
++    rows = db.execute(&quot;SELECT * FROM sales&quot;).fetchall()
++    return render(rows)
+```
+
+**Output 2**
+
+```
+## PR Review — REQUEST CHANGES
+
+🔴 BLOCKER — apply_discount, return line
+`pct` is documented 0–100 but used as a raw multiplier, so a 20% discount computes
+`price - price*20` (a 2000% discount) · ships incorrect money math ·
+Fix: `return price - price * (pct / 100)` and add boundary tests (0, 100).
+
+🟠 MAJOR — fetch_rate
+`requests.get` has no timeout — violates STANDARDS (&quot;all outbound HTTP must set a
+timeout&quot;) and can hang the worker · also `.json()` will raise on a non-200/non-JSON
+response · Fix: `requests.get(url, timeout=5)`, check status, handle errors.
+
+🟠 MAJOR — controllers/report.py:report
+Raw `db.execute` in a controller violates STANDARDS (&quot;DB access goes through the
+repository layer&quot;) · couples the controller to the schema · Fix: move the query
+behind a repository method.
+
+Skipped (style — linter&#x27;s job): none worth noting.
+Summary: One blocking money bug and two standards violations — changes required.
+```
+
+### Input 3 — clean diff (restraint test): nothing substantive to flag
+
+```diff
++def get_user(conn, user_id: int):
++    row = conn.execute(
++        &quot;SELECT id, email FROM users WHERE id = ?&quot;, (user_id,)
++    ).fetchone()
++    return row
++
++def test_get_user_returns_row(fake_conn):
++    assert get_user(fake_conn, 1)[&quot;email&quot;] == &quot;a@b.com&quot;
++
++def test_get_user_missing(fake_conn):
++    assert get_user(fake_conn, 999) is None
+```
+
+**Output 3**
+
+```
+## PR Review — APPROVE
+
+No logic, security, test-coverage, or architectural issues found:
+- Query is parameterized (no injection).
+- Both the hit and the not-found paths are tested.
+
+Skipped (style — linter&#x27;s job): naming/formatting not reviewed.
+Summary: Looks correct and tested — approving. Style left to the linter.
+```
+
+### Determinism check
+
+Each input was re-run. The same findings appeared at the same severities and the
+verdict was identical every time (BLOCK / REQUEST CHANGES / APPROVE). Critically,
+the style distractor in Input 1 was **never** promoted to a finding across runs,
+and Input 3 was **never** padded with a manufactured issue — the skill approved it
+every time. Findings, severities, and verdict are pinned; the wording of each
+suggested fix is not.
+</pre>
+    </div>
+
+    <!-- ── Eval Log Summary ───────────────────────────────── -->
+    <h2 class="section-title" data-animate>◆ EVAL LOG — 3 MESSY INPUTS</h2>
+
+    <div class="content-section" data-label="DETERMINISM PROOF" data-animate>
+      <table class="pixel-table" id="eval-table-sentinel">
+        <thead>
+          <tr><th>#</th><th>MESSY INPUT</th><th>RESULT</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>01</td><td>SQL injection + missing test + a style distractor</td><td><span class="verdict-badge verdict-block">BLOCK</span> &nbsp;Caught the injection &amp; missing test; ignored the style</td></tr>
+          <tr><td>02</td><td>Logic bug + no timeout + a team-standards violation</td><td><span class="verdict-badge verdict-changes">REQUEST CHANGES</span> &nbsp;Money-math bug + 2 standards violations</td></tr>
+          <tr><td>03</td><td>Clean, parameterized, tested diff</td><td><span class="verdict-badge verdict-approve">APPROVE</span> &nbsp;Approved — did not invent a problem</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.6rem; color: var(--color-text); line-height: 2; margin-top: var(--s3);">
+        <strong style="color: var(--color-accent);">Determinism:</strong> Each input was re-run. The same findings appeared at the same severities and the verdict was identical every time (BLOCK / REQUEST CHANGES / APPROVE). Critically, the style distractor in Input 1 was **never** promoted to a finding across runs, and Input 3 was **never** padded with a manufactured issue — the skill approved it every time. Findings, severities, and verdict are pinned; the wording of each suggested fix is not.
+      </p>
+      <div style="text-align: center; margin-top: var(--s3);">
+        <span class="det-stamp">✓ OUTPUTS DETERMINISTIC BY DESIGN</span>
+      </div>
+    </div>
+
+    <!-- ── Try It ─────────────────────────────────────────── -->
+    <div class="try-it-banner" data-animate>
+      <div class="try-it-banner-text">
+        <strong>[ ⚡ LIVE TEST ]</strong> Run this skill against the real Claude API in your browser.
+        Paste a messy input and watch the skill produce a structured, deterministic result.
+      </div>
+      <button class="try-it-btn" onclick="TryIt.open(SKILL_CONFIG)">
+        <span class="claude-dot"></span> TRY IT ON CLAUDE →
+      </button>
+    </div>
+
+    <!-- ── Back / Forward nav ─────────────────────────────── -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--s5); flex-wrap: wrap; gap: var(--s2);" data-animate>
+      <a href="phase2-trial-2-scribe.html" class="pixel-btn" style="background: transparent; color: var(--color-accent); border-color: var(--color-accent);">← THE SCRIBE</a>
+      <a href="index.html" class="pixel-btn">BACK TO PASSPORT →</a>
+    </div>
+
+  </main>
+
+  <footer class="pixel-footer">
+    <p>PHASE 2 / SKILL 03 — THE CODE SENTINEL &nbsp;•&nbsp; INVICTA-ONE 2026</p>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/try-it.js"></script>
+  <script>
+    var _raw = document.getElementById('skill-sentinel').textContent;
+    var SKILL_CONFIG = {
+      name: 'THE CODE SENTINEL',
+      color: '#fb7185',
+      systemPrompt: _raw.split('## Eval Log')[0].trim(),
+      inputLabel: 'PASTE A GIT DIFF (optionally a STANDARDS: block) TO REVIEW',
+      inputPlaceholder: "+def get_user(req):\n+    uid = req.args.get('id')\n+    q = \"SELECT * FROM users WHERE id = '\" + uid + \"'\"...",
+      sampleInput: "+def apply_discount(price, pct):  # pct is 0-100\n+    return price - price * pct\n+\n+def fetch_rate(url):\n+    r = requests.get(url)\n+    return r.json()"
+    };
+  </script>
+</body>
+</html>

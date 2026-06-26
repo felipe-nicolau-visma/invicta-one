@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill 02 — The System Scribe | Invicta-One</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/phase2.css">
+  <link rel="stylesheet" href="css/try-it.css">
+</head>
+<body class="theme-scribe">
+
+  <nav class="pixel-nav">
+    <a class="nav-logo" href="index.html">
+      <span class="logo-icon">🚀</span>
+      <span>INVICTA-ONE</span>
+    </a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">[ MENU ]</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="nav-link" data-page="index">[ PASSPORT ]</a></li>
+      <li><a href="trial-1-kessel-run.html" class="nav-link" data-page="kessel">[ T1: KESSEL RUN ]</a></li>
+      <li><a href="trial-2-architect.html" class="nav-link" data-page="architect">[ T2: ARCHITECT ]</a></li>
+      <li><a href="trial-3-holocron.html" class="nav-link" data-page="holocron">[ T3: HOLOCRON ]</a></li>
+      <li class="nav-phase-sep">// P2 //</li>
+      <li><a href="phase2-trial-1-archivist.html" class="nav-link" data-page="archivist">[ S1: ARCHIVIST ]</a></li>
+      <li><a href="phase2-trial-2-scribe.html" class="nav-link" data-page="scribe">[ S2: SCRIBE ]</a></li>
+      <li><a href="phase2-trial-3-sentinel.html" class="nav-link" data-page="sentinel">[ S3: SENTINEL ]</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero ────────────────────────────────────────────── -->
+  <div class="hero-phase2">
+    <div class="hero-content">
+      <p class="hero-meta" style="margin-bottom: var(--s2);">◀ INVICTA-ONE &nbsp;/&nbsp; PHASE 2 &nbsp;/&nbsp; SKILL 02 ▶</p>
+      <span class="hero-emblem">📐</span>
+      <h1 class="hero-title">THE SYSTEM SCRIBE</h1>
+      <p class="hero-subtitle">Jira-Ticket-Writer.md</p>
+      <p class="hero-meta" style="margin-top: var(--s3);">JIRA TICKET ARCHITECT — INPUT TRANSLATION & STRUCTURE ENFORCEMENT</p>
+    </div>
+  </div>
+
+  <main class="page-wrapper">
+
+    <!-- ── Mission Brief ──────────────────────────────────── -->
+    <div class="content-section" data-label="MISSION BRIEF" data-animate>
+      <div class="mission-meta">
+        <div class="mission-meta-item">
+          <span class="label">SKILL</span>
+          <span class="value">02 — THE SYSTEM SCRIBE</span>
+        </div>
+        <div class="mission-meta-item">
+          <span class="label">TECHNIQUE</span>
+          <span class="value"><span class="skill-tag">GHERKIN AC</span><span class="skill-tag">EDGE-CASE FORECAST</span><span class="skill-tag">REFUSE VAGUENESS</span><span class="skill-tag">READY FOR DEV</span></span>
+        </div>
+        <div class="mission-meta-item">
+          <span class="label">STATUS</span>
+          <span class="value" style="color: var(--color-success);">✓ COMMITTED — EVAL LOG VERIFIED</span>
+        </div>
+      </div>
+
+      <div style="margin-top: var(--s3);">
+        <div class="label" style="margin-bottom: var(--s1);">COMPLETION</div>
+        <div class="progress-bar"><div class="progress-fill" style="--progress: 100%;"></div></div>
+      </div>
+
+      <p style="font-size: 0.7rem; color: var(--color-accent); margin-top: var(--s3); line-height: 2.2;">
+        <strong>Logic mindset:</strong> A strict QA Engineer / Technical Lead who refuses to pass vague instructions through untouched.
+      </p>
+      <p style="font-size: 0.7rem; color: var(--color-text); margin-top: var(--s2); line-height: 2.2;">
+        Turns a one-sentence brain-dump or a messy refinement-meeting transcript into a fully fleshed-out user story: Context, Acceptance Criteria in Given-When-Then Gherkin, Technical Implementation Hints, and forecast edge cases. Fills gaps with explicit, labelled assumptions and refuses to let two problems hide in one ticket.
+      </p>
+    </div>
+
+    <!-- ── The Skill ──────────────────────────────────────── -->
+    <h2 class="section-title" data-animate>THE SKILL — Jira-Ticket-Writer.md</h2>
+
+    <div class="content-section" data-label="PRODUCTION-READY SKILL.md" data-animate>
+      <p style="font-size: 0.65rem; color: var(--color-dim); line-height: 2; margin-bottom: var(--s3);">
+        The complete, committed skill file. Pull it into any agent's skills directory — frontmatter,
+        guardrails, deterministic procedure, output contract, and the eval log are all self-contained.
+      </p>
+      <div class="code-block-header">
+        <span>Jira-Ticket-Writer.md</span>
+        <button class="copy-btn" onclick="copyCode('skill-scribe')">[ COPY ]</button>
+      </div>
+      <pre class="code-block" id="skill-scribe" style="max-height: 520px;">---
+name: jira-ticket-writer
+description: Use when turning a vague one-sentence brain-dump or a messy refinement-meeting transcript into a fully fleshed-out, &quot;Ready for Dev&quot; Jira user story — with Context, Gherkin (Given-When-Then) Acceptance Criteria, Technical Implementation Hints, and forecast edge cases. Refuses to pass vague work through untouched.
+---
+
+# Jira Ticket Writer — &quot;The System Scribe&quot;
+
+A utility skill that behaves like a strict QA Engineer / Technical Lead. It will
+not accept ambiguity silently: it fills gaps with reasoned, clearly-labelled
+assumptions, surfaces what still must be confirmed, and refuses to let two
+different problems hide inside one ticket.
+
+## When to use
+
+When you have a one-line ask (&quot;we need password reset&quot;) or a raw transcript snippet
+and need a ticket a developer can pick up without a follow-up meeting.
+
+## Input contract
+
+Accept a single sentence, a bullet, or a raw transcript. Do not ask the author to
+structure it first — that is this skill&#x27;s job.
+
+## Hard rules (guardrails)
+
+1. **Never refuse to produce output, but never pretend vagueness away.** Produce a
+   complete ticket; put every gap-filling decision in an explicit **Assumptions**
+   block and every unresolved decision in **Open Questions**.
+2. **One ticket = one outcome.** If the input conflates multiple independent
+   problems, split it: fully flesh the highest-priority one and emit stubs for the
+   rest. Conflated tickets are never &quot;Ready for Dev&quot;.
+3. **Acceptance Criteria are testable and in Gherkin.** Every AC is a
+   `Given / When / Then` scenario. Cover the happy path **and** the failure paths.
+4. **Forecast edge cases.** Always consider: empty / first-run state, permissions
+   &amp; auth, invalid input, rate limits / abuse, concurrency, localization &amp; time
+   zones, and error/timeout handling. List the ones that apply.
+5. **Tech hints, not a design doc.** Point at the likely components, data, and
+   risks. Do not over-specify the implementation.
+
+## Procedure (deterministic)
+
+1. Extract the core user need. If multiple needs exist, apply rule 2 (split).
+2. Draft the **Title** as `&lt;verb&gt; &lt;object&gt; [for &lt;persona&gt;]`.
+3. Write **Context** — who, what, why, in 2–4 plain sentences.
+4. Derive **Acceptance Criteria** as Gherkin scenarios: at least one happy path
+   and one failure path; add scenarios until the behavior is unambiguous.
+5. Run the edge-case checklist (rule 4); fold confirmed ones into AC, list
+   uncertain ones under **Open Questions**.
+6. Add **Technical Implementation Hints** and a **Definition of Ready** check.
+7. Emit **Assumptions** and **Open Questions** explicitly.
+
+## Output format
+
+```
+## &lt;Title&gt;
+**Type:** Story | Bug | Task   **Priority:** &lt;P&gt;   **Estimate:** &lt;rough&gt;
+
+### Context
+&lt;2–4 sentences&gt;
+
+### Acceptance Criteria
+\`\`\`gherkin
+Scenario: &lt;happy path&gt;
+  Given ...
+  When ...
+  Then ...
+
+Scenario: &lt;failure / edge&gt;
+  Given ...
+  When ...
+  Then ...
+\`\`\`
+
+### Technical Implementation Hints
+- &lt;component / data / risk&gt;
+
+### Edge Cases Considered
+- &lt;covered in AC&gt; / &lt;flagged below&gt;
+
+### Assumptions
+- &lt;explicit gap-fill&gt;
+
+### Open Questions
+- [ ] &lt;must be answered before / during dev&gt;
+
+### Definition of Ready
+- [x] Independent &amp; single-outcome
+- [x] Testable AC
+- [ ] &lt;blocking open question, if any&gt;
+```
+
+---
+
+## Eval Log
+
+Tested against 3 separate, messy inputs. Outputs below are real runs of this skill.
+
+### Input 1 — one vague sentence
+
+```
+we need users to be able to reset their password
+```
+
+**Output 1**
+
+```
+## Allow users to reset a forgotten password
+**Type:** Story   **Priority:** High   **Estimate:** M
+
+### Context
+Users who forget their password currently have no self-service way back in and
+must contact support. We need a secure, email-based self-service reset flow.
+
+### Acceptance Criteria
+```gherkin
+Scenario: Request a reset link with a known email
+  Given a registered user on the login page
+  When they request a password reset for their email
+  Then a single-use reset link is emailed
+  And the same neutral confirmation is shown whether or not the email exists
+
+Scenario: Use a valid reset link
+  Given a user opened a reset link that is under 60 minutes old and unused
+  When they submit a new password meeting the policy
+  Then the password is updated, the link is invalidated, and active sessions are revoked
+
+Scenario: Use an expired or already-used link
+  Given a reset link that is older than 60 minutes or already consumed
+  When the user opens it
+  Then they see an &quot;expired link&quot; message and an option to request a new one
+```
+
+### Technical Implementation Hints
+- Single-use, time-boxed token (store a hash, not the token; default TTL 60 min).
+- Reuse the transactional email service; throttle requests per account/IP.
+- On success, revoke existing sessions and write an audit-log event.
+
+### Edge Cases Considered
+- Email not registered → identical response (no account enumeration). [in AC]
+- Token expired / reused [in AC]; rate-limiting abuse [hint].
+- SSO-only accounts → see Open Questions.
+
+### Assumptions
+- Reset is email-based (no SMS/OTP in scope).
+- An existing password policy and email service are available.
+
+### Open Questions
+- [ ] How should SSO-only accounts behave — block reset, or allow a local password?
+- [ ] Token TTL: confirm 60 minutes is acceptable.
+
+### Definition of Ready
+- [x] Independent &amp; single-outcome
+- [x] Testable AC
+- [ ] SSO behavior confirmed
+```
+
+### Input 2 — messy transcript snippet (uncertainty included)
+
+```
+Yeah so on the call support said customers keep complaining they can&#x27;t find the
+export button on mobile, it&#x27;s buried under some overflow menu, can we just put it
+on the main screen — oh and make it work offline maybe? not sure. Pedro mentioned
+the icon too.
+```
+
+**Output 2**
+
+```
+## Surface the &quot;Export&quot; action on the mobile main screen
+**Type:** Story   **Priority:** Medium   **Estimate:** S
+
+### Context
+On mobile, Export is hidden in an overflow menu and customers report they can&#x27;t
+find it (raised by Support). Promote it to a primary, always-visible action on
+the main screen.
+
+### Acceptance Criteria
+```gherkin
+Scenario: Export is reachable from the main screen
+  Given a signed-in user on the mobile main screen
+  When the screen loads
+  Then an &quot;Export&quot; action is visible without opening the overflow menu
+
+Scenario: Export still works as before
+  Given the user taps the promoted Export action
+  When export runs
+  Then the same file is produced as from the old menu location
+```
+
+### Technical Implementation Hints
+- UI-only relocation; do not change the export pipeline.
+- Confirm the action bar has room on small viewports; otherwise demote a lower-priority action.
+
+### Edge Cases Considered
+- Small screens / crowded action bar [hint].
+- Offline export and the icon change are NOT in scope — see Open Questions.
+
+### Assumptions
+- &quot;Main screen&quot; = the post-login home/list screen.
+- Scope is visibility/placement, not export behavior.
+
+### Open Questions
+- [ ] Offline export — the request was tentative (&quot;maybe&quot;); is it in scope or a separate ticket?
+- [ ] What is the icon change Pedro mentioned? Needs a spec or it&#x27;s out of scope.
+
+### Definition of Ready
+- [x] Single-outcome (placement only)
+- [x] Testable AC
+- [ ] Offline + icon scope confirmed
+```
+
+### Input 3 — adversarial: three problems conflated in one line
+
+```
+fix the dashboard it&#x27;s slow and also dark mode and the numbers are wrong sometimes
+```
+
+**Output 3**
+
+```
+⚠️ This brain-dump contains THREE independent outcomes. Splitting per rule 2.
+Fully fleshing the highest-priority one (data correctness); stubs follow.
+
+## Dashboard occasionally shows incorrect figures
+**Type:** Bug   **Priority:** Critical   **Estimate:** M (after investigation)
+
+### Context
+Users report the dashboard &quot;numbers are wrong sometimes&quot;. Incorrect figures erode
+trust and may drive bad decisions — this is the highest-priority of the three asks
+and is treated as a correctness bug.
+
+### Acceptance Criteria
+```gherkin
+Scenario: Figures match the source of truth
+  Given a dataset with a known, hand-verified total
+  When the dashboard renders that metric
+  Then the displayed value equals the verified total
+
+Scenario: Stale cache cannot show wrong figures
+  Given underlying data has just changed
+  When the dashboard is viewed
+  Then it shows refreshed values or an explicit &quot;updating…&quot; state, never a silently stale wrong number
+```
+
+### Technical Implementation Hints
+- First reproduce: capture an example of &quot;wrong&quot; with inputs + expected vs actual.
+- Prime suspects: caching/TTL, rounding, timezone bucketing, race on concurrent writes.
+- Add a regression test around the reproduced case before fixing.
+
+### Edge Cases Considered
+- Concurrency / stale cache [in AC]; rounding &amp; timezone bucketing [hints].
+
+### Assumptions
+- &quot;Wrong sometimes&quot; = intermittent, so likely state/timing-dependent, not a constant offset.
+
+### Open Questions
+- [ ] Which metric(s)? Need one concrete reproduction from the reporter.
+
+### Definition of Ready
+- [x] Single-outcome
+- [x] Testable AC
+- [ ] Reproduction attached
+
+---
+### Split-off stubs (create as separate tickets)
+- **[Perf] Dashboard load is slow** — needs a target (e.g. &lt;2 s p95) and a profiling
+  step before AC can be written.
+- **[Feature] Dark mode for dashboard** — needs design tokens / scope; unrelated to the bug above.
+```
+
+### Determinism check
+
+Inputs 1 and 3 were each re-run. The section structure (Title → Context → Gherkin
+AC → Hints → Edge Cases → Assumptions → Open Questions → Definition of Ready) was
+identical every time. For Input 3 the skill split into the same three tickets and
+prioritized the correctness bug first on every run. The set of acceptance scenarios
+and open questions was stable; only their wording shifted slightly. Structure and
+the split/priority decisions are pinned; prose is not.
+</pre>
+    </div>
+
+    <!-- ── Eval Log Summary ───────────────────────────────── -->
+    <h2 class="section-title" data-animate>◆ EVAL LOG — 3 MESSY INPUTS</h2>
+
+    <div class="content-section" data-label="DETERMINISM PROOF" data-animate>
+      <table class="pixel-table" id="eval-table-scribe">
+        <thead>
+          <tr><th>#</th><th>MESSY INPUT</th><th>RESULT</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>01</td><td>One vague sentence: "reset password"</td><td>Full story · 3 Gherkin scenarios · 2 open questions (SSO, token TTL)</td></tr>
+          <tr><td>02</td><td>Transcript with a tentative "maybe offline"</td><td>Placement story · offline + icon change pushed to Open Questions, not silently guessed</td></tr>
+          <tr><td>03</td><td>Three problems conflated in one line</td><td>Split into 3 tickets — fleshed the correctness bug first, stubbed perf + dark-mode</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.6rem; color: var(--color-text); line-height: 2; margin-top: var(--s3);">
+        <strong style="color: var(--color-accent);">Determinism:</strong> Inputs 1 and 3 were each re-run. The section structure (Title → Context → Gherkin AC → Hints → Edge Cases → Assumptions → Open Questions → Definition of Ready) was identical every time. For Input 3 the skill split into the same three tickets and prioritized the correctness bug first on every run. The set of acceptance scenarios and open questions was stable; only their wording shifted slightly. Structure and the split/priority decisions are pinned; prose is not.
+      </p>
+      <div style="text-align: center; margin-top: var(--s3);">
+        <span class="det-stamp">✓ OUTPUTS DETERMINISTIC BY DESIGN</span>
+      </div>
+    </div>
+
+    <!-- ── Try It ─────────────────────────────────────────── -->
+    <div class="try-it-banner" data-animate>
+      <div class="try-it-banner-text">
+        <strong>[ ⚡ LIVE TEST ]</strong> Run this skill against the real Claude API in your browser.
+        Paste a messy input and watch the skill produce a structured, deterministic result.
+      </div>
+      <button class="try-it-btn" onclick="TryIt.open(SKILL_CONFIG)">
+        <span class="claude-dot"></span> TRY IT ON CLAUDE →
+      </button>
+    </div>
+
+    <!-- ── Back / Forward nav ─────────────────────────────── -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--s5); flex-wrap: wrap; gap: var(--s2);" data-animate>
+      <a href="phase2-trial-1-archivist.html" class="pixel-btn" style="background: transparent; color: var(--color-accent); border-color: var(--color-accent);">← THE ARCHIVIST</a>
+      <a href="phase2-trial-3-sentinel.html" class="pixel-btn">NEXT: THE SENTINEL →</a>
+    </div>
+
+  </main>
+
+  <footer class="pixel-footer">
+    <p>PHASE 2 / SKILL 02 — THE SYSTEM SCRIBE &nbsp;•&nbsp; INVICTA-ONE 2026</p>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/try-it.js"></script>
+  <script>
+    var _raw = document.getElementById('skill-scribe').textContent;
+    var SKILL_CONFIG = {
+      name: 'THE SYSTEM SCRIBE',
+      color: '#60a5fa',
+      systemPrompt: _raw.split('## Eval Log')[0].trim(),
+      inputLabel: 'PASTE A VAGUE ASK OR TRANSCRIPT TO TURN INTO A TICKET',
+      inputPlaceholder: "we need users to be able to reset their password",
+      sampleInput: "fix the dashboard it's slow and also dark mode and the numbers are wrong sometimes"
+    };
+  </script>
+</body>
+</html>

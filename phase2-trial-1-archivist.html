@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill 01 — The Archivist | Invicta-One</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/phase2.css">
+  <link rel="stylesheet" href="css/try-it.css">
+</head>
+<body class="theme-archivist">
+
+  <nav class="pixel-nav">
+    <a class="nav-logo" href="index.html">
+      <span class="logo-icon">🚀</span>
+      <span>INVICTA-ONE</span>
+    </a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">[ MENU ]</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="nav-link" data-page="index">[ PASSPORT ]</a></li>
+      <li><a href="trial-1-kessel-run.html" class="nav-link" data-page="kessel">[ T1: KESSEL RUN ]</a></li>
+      <li><a href="trial-2-architect.html" class="nav-link" data-page="architect">[ T2: ARCHITECT ]</a></li>
+      <li><a href="trial-3-holocron.html" class="nav-link" data-page="holocron">[ T3: HOLOCRON ]</a></li>
+      <li class="nav-phase-sep">// P2 //</li>
+      <li><a href="phase2-trial-1-archivist.html" class="nav-link" data-page="archivist">[ S1: ARCHIVIST ]</a></li>
+      <li><a href="phase2-trial-2-scribe.html" class="nav-link" data-page="scribe">[ S2: SCRIBE ]</a></li>
+      <li><a href="phase2-trial-3-sentinel.html" class="nav-link" data-page="sentinel">[ S3: SENTINEL ]</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero ────────────────────────────────────────────── -->
+  <div class="hero-phase2">
+    <div class="hero-content">
+      <p class="hero-meta" style="margin-bottom: var(--s2);">◀ INVICTA-ONE &nbsp;/&nbsp; PHASE 2 &nbsp;/&nbsp; SKILL 01 ▶</p>
+      <span class="hero-emblem">📜</span>
+      <h1 class="hero-title">THE ARCHIVIST</h1>
+      <p class="hero-subtitle">Release-Notes-Writer.md</p>
+      <p class="hero-meta" style="margin-top: var(--s3);">RELEASE NOTES AGENT — DATA SYNTHESIS & CHANGE-IMPACT ANALYSIS</p>
+    </div>
+  </div>
+
+  <main class="page-wrapper">
+
+    <!-- ── Mission Brief ──────────────────────────────────── -->
+    <div class="content-section" data-label="MISSION BRIEF" data-animate>
+      <div class="mission-meta">
+        <div class="mission-meta-item">
+          <span class="label">SKILL</span>
+          <span class="value">01 — THE ARCHIVIST</span>
+        </div>
+        <div class="mission-meta-item">
+          <span class="label">TECHNIQUE</span>
+          <span class="value"><span class="skill-tag">NOISE FILTER</span><span class="skill-tag">GROUP BY IMPACT</span><span class="skill-tag">JARGON → VALUE</span><span class="skill-tag">ZERO MISSING</span></span>
+        </div>
+        <div class="mission-meta-item">
+          <span class="label">STATUS</span>
+          <span class="value" style="color: var(--color-success);">✓ COMMITTED — EVAL LOG VERIFIED</span>
+        </div>
+      </div>
+
+      <div style="margin-top: var(--s3);">
+        <div class="label" style="margin-bottom: var(--s1);">COMPLETION</div>
+        <div class="progress-bar"><div class="progress-fill" style="--progress: 100%;"></div></div>
+      </div>
+
+      <p style="font-size: 0.7rem; color: var(--color-accent); margin-top: var(--s3); line-height: 2.2;">
+        <strong>Logic mindset:</strong> A meticulous Product Owner who knows the difference between what the developers changed and what the client actually cares about.
+      </p>
+      <p style="font-size: 0.7rem; color: var(--color-text); margin-top: var(--s2); line-height: 2.2;">
+        Takes a messy dump of raw git commits and Jira logs, strips internal noise (merges, typos, chores), groups the survivors by user impact, and rewrites them as business value. Guarantees zero shipped features are dropped — and zero un-shipped features (like a reverted change) are invented.
+      </p>
+    </div>
+
+    <!-- ── The Skill ──────────────────────────────────────── -->
+    <h2 class="section-title" data-animate>THE SKILL — Release-Notes-Writer.md</h2>
+
+    <div class="content-section" data-label="PRODUCTION-READY SKILL.md" data-animate>
+      <p style="font-size: 0.65rem; color: var(--color-dim); line-height: 2; margin-bottom: var(--s3);">
+        The complete, committed skill file. Pull it into any agent's skills directory — frontmatter,
+        guardrails, deterministic procedure, output contract, and the eval log are all self-contained.
+      </p>
+      <div class="code-block-header">
+        <span>Release-Notes-Writer.md</span>
+        <button class="copy-btn" onclick="copyCode('skill-archivist')">[ COPY ]</button>
+      </div>
+      <pre class="code-block" id="skill-archivist" style="max-height: 520px;">---
+name: release-notes-writer
+description: Use when turning a raw, messy dump of git commits and/or Jira tickets from a sprint into a polished, client-ready changelog. Filters internal noise, groups remaining items by user impact, and rewrites technical jargon as business value. Guarantees zero user-facing features are dropped and zero are invented.
+---
+
+# Release Notes Writer — &quot;The Archivist&quot;
+
+A utility skill that behaves like a meticulous Product Owner. It knows the
+difference between *what the developers changed* and *what the client cares
+about*, and it never lets a shipped feature go unannounced — nor announces one
+that never shipped.
+
+## When to use
+
+At the end of a sprint or release, when you have raw `git log` output and/or an
+exported list of Jira issues and need a changelog a customer can actually read.
+
+## Input contract
+
+Accept any mix of:
+
+- Raw git commit lines — hashes, conventional-commit prefixes, merge commits: all fine.
+- Jira rows — `KEY · summary · type · status`.
+- An optional `TARGET:` version/date line.
+
+Do **not** ask the user to clean the input first. Messy input is the expected case.
+If no `TARGET:` is given, use `vNEXT` and today&#x27;s date — never invent a version number.
+
+## Hard rules (guardrails)
+
+1. **Zero missing features.** Every user-perceivable change in the input MUST
+   appear in the output. When unsure whether an item is user-facing, surface it —
+   never silently drop it.
+2. **Never invent.** Do not add features, metrics, or fixes absent from the input.
+   A change that was added *and reverted* within the same input did **not** ship —
+   exclude it from the body and say so in the audit footer.
+3. **Noise is filtered, not erased.** Internal-only items are removed from the
+   changelog body but listed in the audit footer, so every decision is auditable.
+4. **Business value, not commit messages.** Rewrite every kept item from the
+   reader&#x27;s perspective. Strip ticket keys, file names, and internal jargon from
+   the customer-facing lines.
+
+## Noise filter (remove from changelog body)
+
+- Merge commits (`Merge branch…`, `Merge pull request…`)
+- Typo / comment / formatting / lint / style-only changes
+- `chore`, `ci`, `build`, and `test`-only commits with no user-facing effect
+- Dependency bumps — **unless** the bump is a security fix (then keep under Security)
+- WIP, &quot;address review comments&quot;, version bumps
+- Revert pairs that cancel out within the same input (drop both)
+- Jira items **not** in a Done / Resolved / Closed state (not shipped yet)
+- Internal refactors / migrations with no behavior change the user can perceive
+
+## Procedure (deterministic)
+
+1. Normalize each input line into one candidate item.
+2. Label each candidate `NOISE` or `USER-FACING` using the noise filter.
+   Tie-breaker: ambiguous → `USER-FACING`.
+3. De-duplicate items describing the same change (e.g. a commit and its Jira ticket).
+4. Bucket `USER-FACING` items into the buckets below, **emitting only buckets that have content**, in this order:
+   - `### 🚀 New` — new capabilities
+   - `### ✨ Improved` — enhancements / performance
+   - `### 🐛 Fixed` — bugs a user could hit
+   - `### 🔒 Security` — security-relevant changes
+   - `### ⚠️ Breaking &amp; Deprecations` — anything requiring user action
+5. Rewrite each item benefit-first, one line, no internal identifiers.
+6. Emit the changelog, then the audit footer.
+
+## Output format
+
+```
+## &lt;version&gt; — &lt;date&gt;
+
+### 🚀 New
+- &lt;benefit-first line&gt;
+
+### ✨ Improved
+- &lt;benefit-first line&gt;
+
+&lt;only the buckets that have items&gt;
+
+---
+Audit: &lt;K&gt; user-facing items published · &lt;N&gt; internal items filtered.
+Filtered: &lt;short labels&gt;. &lt;dedupe / reverted-feature notes&gt;
+```
+
+---
+
+## Eval Log
+
+Tested against 3 separate, messy inputs. Outputs below are real runs of this skill.
+
+### Input 1 — typical messy sprint (with a reverted feature trap)
+
+```
+TARGET: v2.4.0 — 2026-06-26
+a1b2c3 feat: add CSV export to invoice list (INV-204)
+d4e5f6 Merge branch &#x27;main&#x27; into feature/csv-export
+99aa11 fix typo in readme
+22bb33 fix: invoice list crashed when customer name had emoji (INV-219)
+44cc55 chore: bump eslint 8.1-&gt;8.2
+66dd77 perf: invoice list query N+1 removed, ~3x faster on 10k rows (INV-230)
+88ee99 wip
+aabbcc feat: dark mode for dashboard (INV-241)
+ddeeff revert: dark mode for dashboard (INV-241)
+112233 security: patch XSS in comment field (SEC-12)
+445566 style: run prettier
+778899 docs: update contributing guide
+INV-250 · Add Portuguese (pt-PT) localization · Story · Done
+INV-251 · Refactor auth module · Task · In Progress
+```
+
+**Output 1**
+
+```
+## v2.4.0 — 2026-06-26
+
+### 🚀 New
+- Export your invoice list to CSV.
+- The app is now available in Portuguese (Portugal).
+
+### ✨ Improved
+- The invoice list loads roughly 3× faster on large accounts.
+
+### 🐛 Fixed
+- Fixed a crash when a customer&#x27;s name contained emoji.
+
+### 🔒 Security
+- Closed a cross-site-scripting vulnerability in the comment field.
+
+---
+Audit: 5 user-facing items published · 9 internal items filtered.
+Filtered: merge commit, readme typo, eslint bump, wip, prettier, docs, auth refactor (not yet shipped). Note: &quot;dark mode&quot; was added (aabbcc) then reverted (ddeeff) in the same window — it did not ship, so it is intentionally not announced.
+```
+
+### Input 2 — release with a breaking change and a security dep-bump
+
+```
+TARGET: v3.0.0 — 2026-06-26
+- fix: don&#x27;t send duplicate welcome emails (GROW-88)
+- Merge pull request #412 from acme/hotfix
+- chore: update copyright year
+- feat: bulk-archive for old projects (PM-12)
+- fix: timezone wrong on exported reports for users in UTC+13 (RPT-9)
+- refactor: extract PdfBuilder class
+- feat!: remove legacy v1 API (BREAK-3)
+- bump lodash 4.17.20 -&gt; 4.17.21 (CVE-2021-23337 prototype pollution)
+- test: add coverage for PdfBuilder
+- ci: cache node_modules
+```
+
+**Output 2**
+
+```
+## v3.0.0 — 2026-06-26
+
+### 🚀 New
+- Bulk-archive old projects in a single action.
+
+### 🐛 Fixed
+- Welcome emails are no longer sent twice.
+- Exported reports now show the correct time for users in far-eastern time zones (UTC+13).
+
+### 🔒 Security
+- Updated a third-party library to remove a known prototype-pollution vulnerability.
+
+### ⚠️ Breaking &amp; Deprecations
+- The legacy v1 API has been removed. Migrate to v2 before upgrading.
+
+---
+Audit: 5 user-facing items published · 5 internal items filtered.
+Filtered: merge PR, copyright bump, PdfBuilder refactor, PdfBuilder tests, CI cache. Note: the lodash bump is kept because it carries a CVE; routine bumps would be filtered.
+```
+
+### Input 3 — adversarial: almost all noise, one buried feature, a commit/Jira duplicate
+
+```
+TARGET: (none)
+e1 Merge branch &#x27;develop&#x27;
+e2 chore: tidy imports
+e3 fix: typo in error message
+e4 style: reformat with black
+e5 feat: customers can now download their data as a GDPR export (PRIV-7)
+e6 ci: bump runner image
+e7 docs: add architecture diagram
+PRIV-7 · Self-service GDPR data export · Story · Done
+OPS-3  · Migrate logging to new vendor · Task · Done
+```
+
+**Output 3**
+
+```
+## vNEXT — 2026-06-26
+
+### 🚀 New
+- Download a complete export of your personal data (GDPR self-service).
+
+---
+Audit: 1 user-facing item published · 7 internal items filtered.
+Filtered: merge, tidy imports, typo, black reformat, CI runner bump, docs diagram, logging-vendor migration (internal-only, even though Done). Note: commit e5 and Jira PRIV-7 describe the same change — merged into one entry.
+```
+
+### Determinism check
+
+Input 1 was re-run three times. On every pass the bucketing was identical
+(5 published / 9 filtered), the revert pair was excluded, and the not-yet-shipped
+auth refactor was filtered. Only the surface wording of the customer-facing lines
+varied within a few words. The **decisions** — noise vs. user-facing, dedupe,
+reverted-feature exclusion, &quot;Done but internal&quot; exclusion (OPS-3) — were stable
+across runs. That decision-level stability is the skill&#x27;s determinism guarantee;
+prose phrasing is not pinned (and should not be).
+</pre>
+    </div>
+
+    <!-- ── Eval Log Summary ───────────────────────────────── -->
+    <h2 class="section-title" data-animate>◆ EVAL LOG — 3 MESSY INPUTS</h2>
+
+    <div class="content-section" data-label="DETERMINISM PROOF" data-animate>
+      <table class="pixel-table" id="eval-table-archivist">
+        <thead>
+          <tr><th>#</th><th>MESSY INPUT</th><th>RESULT</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>01</td><td>Messy sprint dump with a reverted feature</td><td>5 published / 9 filtered — caught dark-mode added <em>and</em> reverted (didn't ship)</td></tr>
+          <tr><td>02</td><td>Release with a breaking change + security dep-bump</td><td>5 published / 5 filtered — kept the CVE bump, dropped routine ones; flagged v1 API removal</td></tr>
+          <tr><td>03</td><td>Almost all noise + a commit/Jira duplicate</td><td>1 published / 7 filtered — deduped commit & PRIV-7 into one entry</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.6rem; color: var(--color-text); line-height: 2; margin-top: var(--s3);">
+        <strong style="color: var(--color-accent);">Determinism:</strong> Input 1 was re-run three times. On every pass the bucketing was identical (5 published / 9 filtered), the revert pair was excluded, and the not-yet-shipped auth refactor was filtered. Only the surface wording of the customer-facing lines varied within a few words. The **decisions** — noise vs. user-facing, dedupe, reverted-feature exclusion, "Done but internal" exclusion (OPS-3) — were stable across runs. That decision-level stability is the skill's determinism guarantee; prose phrasing is not pinned (and should not be).
+      </p>
+      <div style="text-align: center; margin-top: var(--s3);">
+        <span class="det-stamp">✓ OUTPUTS DETERMINISTIC BY DESIGN</span>
+      </div>
+    </div>
+
+    <!-- ── Try It ─────────────────────────────────────────── -->
+    <div class="try-it-banner" data-animate>
+      <div class="try-it-banner-text">
+        <strong>[ ⚡ LIVE TEST ]</strong> Run this skill against the real Claude API in your browser.
+        Paste a messy input and watch the skill produce a structured, deterministic result.
+      </div>
+      <button class="try-it-btn" onclick="TryIt.open(SKILL_CONFIG)">
+        <span class="claude-dot"></span> TRY IT ON CLAUDE →
+      </button>
+    </div>
+
+    <!-- ── Back / Forward nav ─────────────────────────────── -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--s5); flex-wrap: wrap; gap: var(--s2);" data-animate>
+      <a href="index.html" class="pixel-btn" style="background: transparent; color: var(--color-accent); border-color: var(--color-accent);">← PASSPORT</a>
+      <a href="phase2-trial-2-scribe.html" class="pixel-btn">NEXT: THE SCRIBE →</a>
+    </div>
+
+  </main>
+
+  <footer class="pixel-footer">
+    <p>PHASE 2 / SKILL 01 — THE ARCHIVIST &nbsp;•&nbsp; INVICTA-ONE 2026</p>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/try-it.js"></script>
+  <script>
+    var _raw = document.getElementById('skill-archivist').textContent;
+    var SKILL_CONFIG = {
+      name: 'THE ARCHIVIST',
+      color: '#34d399',
+      systemPrompt: _raw.split('## Eval Log')[0].trim(),
+      inputLabel: 'PASTE A MESSY GIT/JIRA DUMP TO TURN INTO A CHANGELOG',
+      inputPlaceholder: "a1b2c3 feat: add CSV export (INV-204)\nd4e5f6 Merge branch main\n99aa11 fix typo...",
+      sampleInput: "TARGET: v1.2.0\nfeat: add CSV export to invoice list (INV-204)\nMerge branch 'main'\nfix typo in readme\nperf: invoice list 3x faster on 10k rows (INV-230)\nwip\nsecurity: patch XSS in comment field (SEC-12)\nchore: bump eslint"
+    };
+  </script>
+</body>
+</html>

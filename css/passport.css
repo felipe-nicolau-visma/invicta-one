@@ -246,6 +246,28 @@ body {
   box-shadow: 0 0 16px rgba(255,170,0,0.2), inset 0 0 20px rgba(255,170,0,0.05);
 }
 
+/* Phase 2 skill stamps */
+.stamp-archivist {
+  border-color: #34d399;
+  color: #34d399;
+  background: radial-gradient(circle, rgba(52,211,153,0.1) 0%, transparent 70%);
+  box-shadow: 0 0 16px rgba(52,211,153,0.2), inset 0 0 20px rgba(52,211,153,0.05);
+}
+
+.stamp-scribe {
+  border-color: #60a5fa;
+  color: #60a5fa;
+  background: radial-gradient(circle, rgba(96,165,250,0.1) 0%, transparent 70%);
+  box-shadow: 0 0 16px rgba(96,165,250,0.2), inset 0 0 20px rgba(96,165,250,0.05);
+}
+
+.stamp-sentinel {
+  border-color: #fb7185;
+  color: #fb7185;
+  background: radial-gradient(circle, rgba(251,113,133,0.1) 0%, transparent 70%);
+  box-shadow: 0 0 16px rgba(251,113,133,0.2), inset 0 0 20px rgba(251,113,133,0.05);
+}
+
 .passport-stamp:hover {
   transform: rotate(var(--stamp-rotation)) scale(1.05) !important;
   filter: sepia(0) contrast(1.2);

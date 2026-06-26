@@ -1,0 +1,91 @@
+/* ============================================================
+   INVICTA-ONE — PHASE2.CSS
+   Shared theme for Phase 2 skill pages (The Agentic Shift).
+   Purple-forward VTP base + per-skill accent variant.
+   Applied via a body theme class: .theme-archivist / .theme-scribe / .theme-sentinel
+   ============================================================ */
+
+/* ── Phase 2 shared palette (overrides base :root defaults) ── */
+body[class*="theme-"] {
+  --color-bg:      #14101e;
+  --color-surface: #1d1730;
+  --color-text:    #ece8f5;
+  --color-dim:     #6f5f92;
+  --color-primary: #8b5cf6;
+  --color-accent:  #b794f6;
+  --color-border:  #3a2f55;
+}
+
+/* ── Per-skill accents (source order: after shared block) ──── */
+body.theme-archivist { --color-primary: #10b981; --color-accent: #34d399; --color-border: #1f6e54; }
+body.theme-scribe    { --color-primary: #3b82f6; --color-accent: #60a5fa; --color-border: #2a4f8a; }
+body.theme-sentinel  { --color-primary: #ef4444; --color-accent: #fb7185; --color-border: #7a2f3a; }
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.hero-phase2 {
+  position: relative;
+  padding: var(--s6) var(--s4) var(--s5);
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 2px solid var(--color-border);
+  background:
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--color-primary) 35%, transparent), transparent 60%),
+    var(--color-bg);
+}
+
+/* faint pixel grid behind the hero */
+.hero-phase2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.hero-phase2 .hero-content { position: relative; z-index: 1; }
+
+.hero-phase2 .hero-emblem {
+  font-size: 2.6rem;
+  display: block;
+  margin-bottom: var(--s2);
+  filter: drop-shadow(0 0 12px var(--color-primary));
+}
+
+/* ── Skill tags (technique chips) ───────────────────────────── */
+.skill-tag {
+  display: inline-block;
+  font-size: 0.55rem;
+  padding: 3px 7px;
+  margin: 2px;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* ── Verdict badges (Code Sentinel eval summary) ────────────── */
+.verdict-badge {
+  display: inline-block;
+  font-size: 0.55rem;
+  padding: 3px 7px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+.verdict-approve  { color: var(--color-success); border-color: var(--color-success); }
+.verdict-changes  { color: var(--color-warn);    border-color: var(--color-warn);    }
+.verdict-block    { color: var(--color-danger);  border-color: var(--color-danger);  background: rgba(255,68,68,0.12); }
+
+/* ── "Deterministic" stamp ──────────────────────────────────── */
+.det-stamp {
+  display: inline-block;
+  border: 2px dashed var(--color-success);
+  color: var(--color-success);
+  padding: var(--s1) var(--s2);
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  transform: rotate(-3deg);
+}
